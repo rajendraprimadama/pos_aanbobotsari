@@ -80,8 +80,8 @@
                         myAlert('warning',respon.message);
                     }
                     else {
-                        myAlert('success',respon.message, respon.url);
-                        window.open("<?php echo base_url(); ?>Datatransaksi/print_nota/"+respon.id_transaksi, '_blank');
+                        //myAlert('success',respon.message, respon.url);
+                        location.replace("<?php echo base_url(); ?>Datatransaksi/print_nota/"+respon.id_transaksi);
                     }
                 })
                 e.preventDefault();
@@ -105,8 +105,8 @@
                         myAlert('warning',respon.message);
                     }
                     else {
-                        myAlert('success',respon.message, respon.url);
-                        window.open("<?php echo base_url(); ?>Datatransaksi/print_nota/"+respon.id_transaksi, '_blank');
+                        //myAlert('success',respon.message, respon.url);
+                        location.replace("<?php echo base_url(); ?>Datatransaksi/print_nota/"+respon.id_transaksi);
                     }
                 })
                 e.preventDefault();
