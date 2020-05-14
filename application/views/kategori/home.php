@@ -5,7 +5,7 @@
 <div class="box">
   <div class="box-header">
     <div class="col-md-12" style="padding: 0;">
-      <button class="form-control btn btn-primary" data-toggle="modal" data-target="#tambah-kategori"><i class="glyphicon glyphicon-plus-sign"></i> Tambah Data Kategori Barang</button>
+      <button class="form-control btn btn-primary" data-toggle="modal" data-target="#tambah-kategori"><i class="glyphicon glyphicon-plus-sign"></i> Tambah Data Jenis Barang</button>
     </div>
     
   </div>
@@ -15,7 +15,7 @@
       <thead class="text-uppercase">
         <tr>
           <th class="text-center" width="5%">NO</th>
-          <th class="text-center">Kategori Barang</th>
+          <th class="text-center">Jenis Barang</th>
           
           <th class="text-center" width="20%">Aksi</th>
         </tr>
