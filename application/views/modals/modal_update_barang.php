@@ -24,7 +24,7 @@
 
             <div class="col-md-6">
               <div class="input-group form-group">
-                <span class="input-group-addon">Kategori Barang</span>
+                <span class="input-group-addon">JENIS</span>
                 <select id='kategori' name="v_kategori" style='width: 100%;' class="form-control">
                   <?php 
                     foreach ($dataKategori as $key => $value) {
@@ -172,8 +172,7 @@
     <hr style="margin-top:0px">
     <div class="form-group">
       <div class="col-md-12">
-        <button type="submit" class="form-control btn btn-primary"> <i class="glyphicon glyphicon-ok"></i> Update Data
-          Barang</button>
+        <button type="submit" class="form-control btn btn-primary"> <i class="glyphicon glyphicon-ok"></i> Simpan</button>
       </div>
     </div>
   </form>
