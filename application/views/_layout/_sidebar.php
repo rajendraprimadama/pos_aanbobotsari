@@ -22,7 +22,7 @@
       <li <?php if ($page == 'Kategori') {echo 'class="active"';} ?>>
         <a href="<?php echo base_url('Datakategori'); ?>">
           <i class="fa fa-tasks"></i>
-          <span>Kategori Barang</span>
+          <span>Jenis Barang</span>
         </a>
       </li>
 
