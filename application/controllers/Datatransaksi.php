@@ -18,7 +18,7 @@ class Datatransaksi extends AUTH_Controller {
 		$data['page'] = "Datatransaksi";
 		$data['judul'] = "Data Transaksi";
 		$data['deskripsi'] = "Manage Data Transaksi";
-
+//home transaksi
 		$this->load->view('transaksi/home', $data);
     }
 
