@@ -8,66 +8,64 @@
     <link rel="stylesheet" href="style.css">
     <title>Nota Penjualan</title>
     <style type="text/css">
-        * {
-            font-size: 11px;
-            font-family: 'Times New Roman';
-        }
+      @page {
+        size: auto;
+        margin: 0;
+        margin-top: 0;
+        padding: 0;
+        height:0px !important;
+    }
+    * {
+        font-size: 14px;
+        font-family: 'Times New Roman';
+    }
 
-        td,
-        th,
-        tr,
-        table {
-            border-top: 1px solid black;
-            border-collapse: collapse;
-        }
+    td,
+    th,
+    tr,
+    table {
+        border-top: 1px solid black;
+        border-collapse: collapse;
+    }
 
-        td.description,
-        th.description {
-            width: 100px;
-            max-width: 100px;
-        }
+    td.description,
+    th.description {
+        width: 160px;
+        max-width: 160px;
+    }
 
-        td.quantity,
-        th.quantity {
-            width: 30px;
-            max-width: 30px;
-            word-break: break-all;
-        }
+    td.quantity,
+    th.quantity {
+        width: 30px;
+        max-width: 30px;
+        word-break: break-all;
+    }
 
-        td.price,
-        th.price {
-            width: 100px;
-            max-width: 100px;
-            word-break: break-all;
-        }
+    td.price,
+    th.price {
+        width: 100px;
+        max-width: 100px;
+        word-break: break-all;
+        margin-left: 20px;
+    }
 
-        .centered {
-            text-align: center;
-            align-content: center;
-        }
+    .centered {
+        text-align: center;
+        align-content: center;
+    }
 
-        .ticket {
-            width: 200px;
-            max-width: 200px;
-        }
+    .ticket {
+        width: 350px;
+        max-width: 300px;
+    }
 
-        img {
-            max-width: inherit;
-            width: inherit;
-        }
 
-        @media print {
-            .hidden-print,
-            .hidden-print * {
-                display: none !important;
-            }
-        }
-    </style>
+</style>
 </head>
 <?php 
-    $b=$datatransaksi->row_array();
+$b=$datatransaksi->row_array();
 ?>
-<body onload="window.print();">
+<body>
     <div class="ticket">
        <!--  <img src="./logo.png" alt="Logo"> -->
        <p class="centered">Toko <strong>AAN</strong> Bobotsari
@@ -110,29 +108,40 @@
                         <td class="satuan"><?php echo $satuan;?></td>
                         <td class="price"><?php echo 'Rp '.number_format($total);?></td>
                     </tr>
-                    <?php }?>
-                    <tr>
-                        <td class="description"><b>Total</b></td>
-                        <td class="quantity"></td>
-                        <td class="satuan"></td>
-                        <td class="price"><b><?php echo 'Rp '.number_format($b['jual_total']);?></b></td>
-                    </tr>
-                    <tr>
-                        <td class="description"><b>Bayar</b></td>
-                        <td class="quantity"></td>
-                        <td class="satuan"></td>
-                        <td class="price"><b><?php echo 'Rp '.number_format($b['jual_jml_uang']);?></b></td>
-                    </tr>
-                    <tr>
-                        <td class="description"><b>Kembalian</b></td>
-                        <td class="quantity"></td>
-                        <td class="satuan"></td>
-                        <td class="price"><b><?php echo 'Rp '.number_format($b['jual_kembalian']);?></b></td>
-                    </tr>
-                </tbody>
-            </table>
-            <p class="centered">Terimakasih atas kunjunganya!
-                <br></p>
-            </div>
-        </body>
-        </html>
+                <?php }?>
+                <tr>
+                    <td class="description"><b>Total</b></td>
+                    <td class="quantity"></td>
+                    <td class="satuan"></td>
+                    <td class="price"><b><?php echo 'Rp '.number_format($b['jual_total']);?></b></td>
+                </tr>
+                <tr>
+                    <td class="description"><b>Bayar</b></td>
+                    <td class="quantity"></td>
+                    <td class="satuan"></td>
+                    <td class="price"><b><?php echo 'Rp '.number_format($b['jual_jml_uang']);?></b></td>
+                </tr>
+                <tr>
+                    <td class="description"><b>Kembalian</b></td>
+                    <td class="quantity"></td>
+                    <td class="satuan"></td>
+                    <td class="price"><b><?php echo 'Rp '.number_format($b['jual_kembalian']);?></b></td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="centered">Terimakasih atas kunjunganya!
+            <br></p>
+        </div>
+    </body>
+    <script type="text/javascript">
+        window.onload = function(){
+          window.print();
+          window.onafterprint = function(e){
+            closePrintView();
+        };
+        function closePrintView() {
+            window.location.href = '<?php echo base_url(); ?>Datatransaksi';   
+        }
+    };
+</script>
+</html>
