@@ -16,6 +16,7 @@
       <td class="text-center"><?php echo $data_barang->pcs_hrgjual_grosir; ?></td>
       <td class="text-center"><?php echo $data_barang->pax_hrgjual_grosir; ?></td>
       <td class="text-center"><?php echo $data_barang->dus_hrgjual_grosir; ?></td>
+      <td><?php echo $data_barang->keterangan; ?></td>
       <td class="text-center">
         <div class="btn-group" role="group" aria-label="...">
           <div class="btn-group" role="group">
