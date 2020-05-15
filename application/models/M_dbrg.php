@@ -34,7 +34,9 @@ class M_dbrg extends CI_Model {
 		'" .$this->saveInt($data['v_dus_hrgjual_retail'])."',
 		'" .$this->saveInt($data['v_pcs_hrgjual_grosir'])."',
 		'" .$this->saveInt($data['v_pax_hrgjual_grosir'])."',
-		'" .$this->saveInt($data['v_dus_hrgjual_grosir'])."')";
+		'" .$this->saveInt($data['v_dus_hrgjual_grosir'])."',
+		'" .strtoupper($data['v_keterangan'])."'
+		)";
 
 		$this->db->query($sql);
 
@@ -58,7 +60,8 @@ class M_dbrg extends CI_Model {
 					dus_hrgjual_retail='" .$this->saveInt($data['v_dus_hrgjual_retail']) ."',
 					pcs_hrgjual_grosir='" .$this->saveInt($data['v_pcs_hrgjual_grosir']) ."',
 					pax_hrgjual_grosir='" .$this->saveInt($data['v_pax_hrgjual_grosir']) ."',
-					dus_hrgjual_grosir='" .$this->saveInt($data['v_dus_hrgjual_grosir']) ."'
+					dus_hrgjual_grosir='" .$this->saveInt($data['v_dus_hrgjual_grosir']) ."',
+					keterangan = '".strtoupper($data['v_keterangan'])."'
 				WHERE id='" .$data['id'] ."'";
 
 		$this->db->query($sql);

@@ -166,6 +166,10 @@
           </div>
         </div>
 
+        <div class="form-group">
+          <textarea class="form-control text-uppercase v_keterangan" id="v_keterangan" name="v_keterangan" placeholder="Keterangan" rows="3"><?php echo $dataBarang->keterangan; ?></textarea>
+        </div>
+
       </div>
     </div>
 
