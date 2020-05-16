@@ -11,8 +11,8 @@
 	window.onload = function() {
 		
 		tampilBarang();
-		tampilSupplier();
-		tampilCustomer();
+		// tampilSupplier();
+		// tampilCustomer();
 		tampilKategori();
 		tampilKaryawan();
 		<?php
