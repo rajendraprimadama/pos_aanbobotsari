@@ -23,6 +23,7 @@
           <th class="text-center" colspan="3">Harga Jual retail</th>
           <th class="text-center" colspan="3">Harga jual grosir</th>
           
+          <th class="text-center" rowspan="2" maxwidth="25%">Keterangan</th>
           <th class="text-center" width="5%" rowspan="2">Aksi</th>
         </tr>
         <tr class="text-uppercase">

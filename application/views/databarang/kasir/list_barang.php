@@ -48,6 +48,8 @@
 
                                 <th class="text-center" colspan="3">Harga Jual retail</th>
                                 <th class="text-center" colspan="3">Harga jual grosir</th>
+
+                                <th class="text-center" rowspan="2" maxwidth="25%">Keterangan</th>
                             </tr>
                             <tr class="text-uppercase">
                                 <th class="text-center">pcs</th>
@@ -75,6 +77,7 @@
                                                 <td class="text-right"><?php echo $val->pcs_hrgjual_grosir; ?></td>
                                                 <td class="text-right"><?php echo $val->pax_hrgjual_grosir; ?></td>
                                                 <td class="text-right"><?php echo $val->dus_hrgjual_grosir; ?></td>
+                                                <td><?php echo $val->keterangan; ?></td>
                                             </tr>
                                             <?php
                                             $no++;

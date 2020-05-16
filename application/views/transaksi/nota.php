@@ -68,7 +68,7 @@ $b=$datatransaksi->row_array();
 <body>
     <div class="ticket" style="margin-top: 0px">
        <!--  <img src="./logo.png" alt="Logo"> -->
-       <p class="centered" style="font-size: 18px">Toko <strong>AAN</strong> Bobotsari
+       <p class="centered" style="font-size: 19px">Toko <strong>AAN</strong> Bobotsari
         <br>(Grosir dan Ecer)
         <br><strong>No tlp</strong> 081804862182
         <br><strong>No wa</strong> 085701621774    </p>
