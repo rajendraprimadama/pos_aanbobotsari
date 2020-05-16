@@ -327,6 +327,7 @@
 
         $(document).on('keypress', '.SelectSatuan', function(event){
             if(event.which==13){
+                event.preventDefault();
                 $('.AddBarang').focus();
             }
         })
