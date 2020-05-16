@@ -300,13 +300,13 @@
 //-----------------------------------------------------------------------------------------------//
 //fungsi DATA SUPPLIER
 	//FUNGSI TAMPIL
-	function tampilSupplier() {
+	/*function tampilSupplier() {
 		$.get('<?php echo base_url('Datasupplier/tampil'); ?>', function(data) {
 			MyTable.fnDestroy();
 			$('#data-supplier').html(data);
 			refresh();
 		});
-	}
+	}*/
 
 	//DELETE SUPPLIER
 	var id_supplier;
