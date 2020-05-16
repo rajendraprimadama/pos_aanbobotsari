@@ -138,6 +138,7 @@ $b=$datatransaksi->row_array();
           window.print();
           window.onafterprint = function(e){
             closePrintView();
+            window.location.href = '<?php echo base_url(); ?>Datatransaksi';
         };
         function closePrintView() {
             window.location.href = '<?php echo base_url(); ?>Datatransaksi';   
