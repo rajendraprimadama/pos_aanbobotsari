@@ -138,7 +138,24 @@ class M_dbrg extends CI_Model {
                                 ");
 
 		return $query->result();
-    }
+	}
+	
+	function isExistBarcode($param){
+		try{
+
+			$data = $this->db->where('barcode_brg',$param)->get('data_barang');
+
+			if ($data->num_rows() > 0){
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
+		catch (Exception $e) {
+			throw $e;
+		}
+	}
 }
 
 /* End of file M_posisi.php */

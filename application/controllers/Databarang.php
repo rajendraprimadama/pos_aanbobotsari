@@ -37,15 +37,23 @@ class Databarang extends AUTH_Controller {
 
 		$data 	= $this->input->post();
 		if ($this->form_validation->run() == TRUE) {
-			$result = $this->M_dbrg->insert($data);
-
-			if ($result > 0) {
+			$isExist = $this->M_dbrg->isExistBarcode($this->input->post('v_barcode'));
+			
+			if($isExist) {
 				$out['status'] = '';
-				$out['msg'] = show_succ_msg('Data Barang Berhasil ditambahkan', '20px');
+				$out['msg'] = show_err_msg('Data Barang sudah ada', '20px');
 			} else {
-				$out['status'] = '';
-				$out['msg'] = show_err_msg('Data Barang Gagal ditambahkan', '20px');
+				$result = $this->M_dbrg->insert($data);
+
+				if ($result > 0) {
+					$out['status'] = '';
+					$out['msg'] = show_succ_msg('Data Barang Berhasil ditambahkan', '20px');
+				} else {
+					$out['status'] = '';
+					$out['msg'] = show_err_msg('Data Barang Gagal ditambahkan', '20px');
+				}
 			}
+			
 		} else {
 			$out['status'] = 'form';
 			$out['msg'] = show_err_msg(validation_errors());
