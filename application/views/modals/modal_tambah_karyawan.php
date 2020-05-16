@@ -58,7 +58,7 @@
 
     <div class="form-group">
       <div class="col-md-12">
-          <button type="submit" class="form-control btn btn-primary"> <i class="glyphicon glyphicon-ok"></i> Tambah Data Karyawan</button>
+          <button type="submit" class="form-control btn btn-primary"> <i class="glyphicon glyphicon-ok"></i> Simpan</button>
       </div>
     </div>
   </form>
