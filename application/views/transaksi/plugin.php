@@ -1,6 +1,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
         _page.init();
+        $('.barcodeScan').focus();
     });
 
     const _page = {
