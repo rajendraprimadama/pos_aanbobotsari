@@ -114,10 +114,10 @@ class M_dbrg extends CI_Model {
 		$data = $this->db->query($sql);
 		$result = $data->result();
 
-        $last_id = isset($result[0]->id_brg) ? $result[0]->id_brg : false;
+		$last_id = isset($result[0]->id_brg) ? $result[0]->id_brg : false;
+		
         if(!empty($last_id)){
-			$new_id = substr($last_id, 7) + 1;
-
+			$new_id = substr($last_id, 3) + 1;
 			$new_id = str_pad($new_id, 5, '0', STR_PAD_LEFT);
 			$generate_id = $perix_param. $new_id;
         }
