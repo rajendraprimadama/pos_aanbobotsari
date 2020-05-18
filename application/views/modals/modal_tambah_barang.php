@@ -15,7 +15,7 @@
                 <span class="input-group-addon" id="sizing-addon2">
                   <i class="glyphicon glyphicon-barcode"></i>
                 </span>
-                <input type="text" class="form-control v_barcode" placeholder="Barcode" name="v_barcode" id="v_barcode" aria-describedby="sizing-addon2" autofocus>
+                <input type="text" class="form-control onlyNumber v_barcode" placeholder="Barcode" name="v_barcode" id="v_barcode" aria-describedby="sizing-addon2" autofocus>
               </div>
             </div>
             <div class="col-md-6">
