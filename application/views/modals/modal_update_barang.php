@@ -50,7 +50,7 @@
             <i class="glyphicon glyphicon-folder-close"></i>
           </span>
           <input type="text" class="form-control keyFontUp" placeholder="Nama Barang" name="v_namabrg"
-            aria-describedby="sizing-addon2" value="<?php echo $dataBarang->nama_brg; ?>" readonly>
+            aria-describedby="sizing-addon2" value="<?php echo $dataBarang->nama_brg; ?>">
         </div>
 
         <div class="form-group">
