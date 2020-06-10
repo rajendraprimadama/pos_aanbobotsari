@@ -10,7 +10,7 @@
       <span class="input-group-addon" id="sizing-addon2">
         <i class="glyphicon glyphicon-tags"></i>
       </span>
-      <input type="text" class="form-control" placeholder="Jenis Barang" name="Kategori" aria-describedby="sizing-addon2" value="<?php echo $dataKategori->kategori; ?>">
+      <input type="text" class="form-control text-uppercase" placeholder="Jenis Barang" name="Kategori" aria-describedby="sizing-addon2" value="<?php echo $dataKategori->kategori; ?>">
     </div>
 
         <div class="form-group">

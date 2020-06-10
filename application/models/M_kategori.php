@@ -18,7 +18,7 @@ class M_kategori extends CI_Model {
 
 	public function insert($data) {
 		$sql = "INSERT INTO data_kategori VALUES('',
-		'" .$data['ktgr'] ."')";
+		'" .strtoupper($data['ktgr']) ."')";
 		$this->db->query($sql);
 
 		return $this->db->affected_rows();
@@ -31,7 +31,7 @@ class M_kategori extends CI_Model {
 	}
 
 	public function update($data) {
-		$sql = "UPDATE data_kategori SET kategori='" .$data['Kategori'] ."'
+		$sql = "UPDATE data_kategori SET kategori='" .strtoupper($data['Kategori']) ."'
 		 WHERE id='" .$data['id'] ."'";
 
 		$this->db->query($sql);

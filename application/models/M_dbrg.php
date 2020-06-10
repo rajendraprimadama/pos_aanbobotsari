@@ -24,7 +24,7 @@ class M_dbrg extends CI_Model {
 		VALUES(
 		'" .$this->generateID($data['v_namabrg'])."',
 		'" .$data['v_barcode']."',	
-		'" .$data['v_namabrg'] ."',
+		'" .strtoupper($data['v_namabrg']) ."',
 		'" .$data['v_kategori'] ."',
 		'" .$this->saveInt($data['v_hrgbeli_pcs'])."',
 		'" .$this->saveInt($data['v_hrgbeli_pax'])."',
@@ -50,7 +50,8 @@ class M_dbrg extends CI_Model {
 	}
 
 	public function update($data) {
-		$sql = "UPDATE data_barang SET nama_brg='" .$data['v_namabrg'] ."',
+		$sql = "UPDATE data_barang SET 
+					nama_brg='" . strtoupper($data['v_namabrg']) ."',
 					kategori='" .$data['v_kategori'] ."',
 					hrg_beli_pcs='" .$this->saveInt($data['v_hrgbeli_pcs']) ."',
 					hrg_beli_pax='" .$this->saveInt($data['v_hrgbeli_pax']) ."',

@@ -49,7 +49,7 @@
           <span class="input-group-addon" id="sizing-addon2">
             <i class="glyphicon glyphicon-folder-close"></i>
           </span>
-          <input type="text" class="form-control keyFontUp" placeholder="Nama Barang" name="v_namabrg"
+          <input type="text" class="form-control text-uppercase" placeholder="Nama Barang" name="v_namabrg"
             aria-describedby="sizing-addon2" value="<?php echo $dataBarang->nama_brg; ?>">
         </div>
 
