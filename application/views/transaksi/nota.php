@@ -16,7 +16,7 @@
         height:0px !important;
     }
     * {
-        font-size: 14px;
+        font-size: 18px;
         font-family: 'Times New Roman';
     }
 
