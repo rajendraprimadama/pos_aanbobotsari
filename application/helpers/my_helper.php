@@ -32,16 +32,19 @@
 
 	function show_err_msg($content='', $size='14px') {
 		if ($content != '') {
-			return   '<p class="box-msg">
-				      <div class="info-box alert-error">
-					      <div class="info-box-icon">
-					      	<i class="fa fa-warning"></i>
-					      </div>
-					      <div class="info-box-content" style="font-size:' .$size .'">
-				        	' .$content
-				      	.'</div>
-					  </div>
-				    </p>';
+			// return   '<p class="box-msg">
+			// 	      <div class="info-box alert-error">
+			// 		      <div class="info-box-icon">
+			// 		      	<i class="fa fa-warning"></i>
+			// 		      </div>
+			// 		      <div class="info-box-content" style="font-size:' .$size .'">
+			// 	        	' .$content
+			// 	      	.'</div>
+			// 		  </div>
+			// 	    </p>';
+			return '<div class="alert bg-danger" role="alert">
+						'.$content.'
+					</div>';
 		}
 	}
 
@@ -54,9 +57,7 @@
 
 			return '<div class="modal fade" id="' .$id .'" role="dialog" tabindex="-1" data-toggle="modal" data-backdrop="static" data-keyboard="false">
 					  <div class="modal-dialog modal-' .$size .'" role="document">
-					    <div class="modal-content">
-					        ' .$view_content .'
-					    </div>
+					    '.$view_content.'
 					  </div>
 					</div>';
 		}

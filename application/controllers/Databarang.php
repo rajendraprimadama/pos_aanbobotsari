@@ -41,16 +41,16 @@ class Databarang extends AUTH_Controller {
 			
 			if($isExist) {
 				$out['status'] = '';
-				$out['msg'] = show_err_msg('Data Barang sudah ada', '20px');
+				$out['msg'] = show_err_msg('Data Barang sudah ada', '15px');
 			} else {
 				$result = $this->M_dbrg->insert($data);
 
 				if ($result > 0) {
 					$out['status'] = '';
-					$out['msg'] = show_succ_msg('Data Barang Berhasil ditambahkan', '20px');
+					$out['msg'] = show_succ_msg('Data Barang Berhasil ditambahkan', '15px');
 				} else {
 					$out['status'] = '';
-					$out['msg'] = show_err_msg('Data Barang Gagal ditambahkan', '20px');
+					$out['msg'] = show_err_msg('Data Barang Gagal ditambahkan', '15px');
 				}
 			}
 			
@@ -85,10 +85,10 @@ class Databarang extends AUTH_Controller {
 
 			if ($result > 0) {
 				$out['status'] = '';
-				$out['msg'] = show_succ_msg('Data Barang Berhasil diupdate', '20px');
+				$out['msg'] = show_succ_msg('Data Barang Berhasil diupdate', '15px');
 			} else {
 				$out['status'] = '';
-				$out['msg'] = show_succ_msg('Data Barang Gagal diupdate', '20px');
+				$out['msg'] = show_succ_msg('Data Barang Gagal diupdate', '15px');
 			}
 		} else {
 			$out['status'] = 'form';

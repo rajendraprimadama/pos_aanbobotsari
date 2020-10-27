@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class M_dbrg extends CI_Model {
 	public function select_all() {
 		// $data = $this->db->get('data_barang'); //merujuk database
-		$sql = "SELECT data_barang.*, data_kategori.kategori AS kategori FROM data_barang INNER JOIN data_kategori on data_barang.kategori = data_kategori.id";
+		$sql = "SELECT data_barang.*, data_kategori.kategori AS kategori FROM data_barang INNER JOIN data_kategori on data_barang.kategori = data_kategori.id ORDER BY id DESC";
 		$data = $this->db->query($sql);
 
 		return $data->result();
@@ -24,7 +24,7 @@ class M_dbrg extends CI_Model {
 		VALUES(
 		'" .$this->generateID($data['v_namabrg'])."',
 		'" .$data['v_barcode']."',	
-		'" .strtoupper($data['v_namabrg']) ."',
+		'" .$data['v_namabrg']."',
 		'" .$data['v_kategori'] ."',
 		'" .$this->saveInt($data['v_hrgbeli_pcs'])."',
 		'" .$this->saveInt($data['v_hrgbeli_pax'])."',
@@ -35,7 +35,7 @@ class M_dbrg extends CI_Model {
 		'" .$this->saveInt($data['v_pcs_hrgjual_grosir'])."',
 		'" .$this->saveInt($data['v_pax_hrgjual_grosir'])."',
 		'" .$this->saveInt($data['v_dus_hrgjual_grosir'])."',
-		'" .strtoupper($data['v_keterangan'])."'
+		'" .$data['v_keterangan']."'
 		)";
 
 		$this->db->query($sql);
@@ -51,7 +51,7 @@ class M_dbrg extends CI_Model {
 
 	public function update($data) {
 		$sql = "UPDATE data_barang SET 
-					nama_brg='" . strtoupper($data['v_namabrg']) ."',
+					nama_brg='" . $data['v_namabrg'] ."',
 					kategori='" .$data['v_kategori'] ."',
 					hrg_beli_pcs='" .$this->saveInt($data['v_hrgbeli_pcs']) ."',
 					hrg_beli_pax='" .$this->saveInt($data['v_hrgbeli_pax']) ."',
@@ -62,7 +62,7 @@ class M_dbrg extends CI_Model {
 					pcs_hrgjual_grosir='" .$this->saveInt($data['v_pcs_hrgjual_grosir']) ."',
 					pax_hrgjual_grosir='" .$this->saveInt($data['v_pax_hrgjual_grosir']) ."',
 					dus_hrgjual_grosir='" .$this->saveInt($data['v_dus_hrgjual_grosir']) ."',
-					keterangan = '".strtoupper($data['v_keterangan'])."'
+					keterangan = '".$data['v_keterangan']."'
 				WHERE id='" .$data['id'] ."'";
 
 		$this->db->query($sql);
