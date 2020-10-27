@@ -8,12 +8,15 @@
       <td class="text-left"><?php echo $data_barang->nama_brg; ?></td>
       <td class="text-left"><?php echo $data_barang->kategori; ?></td>
       <td class="text-center"><?php echo $data_barang->hrg_beli_pcs; ?></td>
+      <td class="text-center"><?php echo $data_barang->hrg_beli_renteng; ?></td>
       <td class="text-center"><?php echo $data_barang->hrg_beli_pax; ?></td>
       <td class="text-center"><?php echo $data_barang->hrg_beli_dus; ?></td>
       <td class="text-center"><?php echo $data_barang->pcs_hrgjual_retail; ?></td>
+      <td class="text-center"><?php echo $data_barang->renteng_hrgjual_retail; ?></td>
       <td class="text-center"><?php echo $data_barang->pax_hrgjual_retail; ?></td>
       <td class="text-center"><?php echo $data_barang->dus_hrgjual_retail; ?></td>
       <td class="text-center"><?php echo $data_barang->pcs_hrgjual_grosir; ?></td>
+      <td class="text-center"><?php echo $data_barang->renteng_hrgjual_grosir; ?></td>
       <td class="text-center"><?php echo $data_barang->pax_hrgjual_grosir; ?></td>
       <td class="text-center"><?php echo $data_barang->dus_hrgjual_grosir; ?></td>
       <td><?php echo $data_barang->keterangan; ?></td>

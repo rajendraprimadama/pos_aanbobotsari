@@ -18,24 +18,27 @@
           <th class="text-center" rowspan="2">Kode Barcode</th>
           <th class="text-center" rowspan="2">Nama Barang</th>
           <th class="text-center" rowspan="2">Kategori</th>
-          <th class="text-center" colspan="3">Harga Beli</th>
+          <th class="text-center" colspan="4">Harga Beli</th>
 
-          <th class="text-center" colspan="3">Harga Jual retail</th>
-          <th class="text-center" colspan="3">Harga jual grosir</th>
+          <th class="text-center" colspan="4">Harga Jual retail</th>
+          <th class="text-center" colspan="4">Harga jual grosir</th>
           
           <th class="text-center" rowspan="2" maxwidth="25%">Keterangan</th>
           <th class="text-center" width="5%" rowspan="2">Aksi</th>
         </tr>
         <tr class="text-uppercase">
           <th class="text-center">pcs</th>
-          <th class="text-center">pax</th>
+          <th class="text-center">renteng</th>
+          <th class="text-center">pak</th>
           <th class="text-center">karton</th>
 
           <th class="text-center">pcs</th>
-          <th class="text-center">pax</th>
+          <th class="text-center">renteng</th>
+          <th class="text-center">pak</th>
           <th class="text-center">karton</th>
           <th class="text-center">pcs</th>
-          <th class="text-center">pax</th>
+          <th class="text-center">renteng</th>
+          <th class="text-center">pak</th>
           <th class="text-center">karton</th>
 
         </tr>
