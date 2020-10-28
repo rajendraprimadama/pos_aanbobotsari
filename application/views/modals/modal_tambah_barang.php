@@ -59,7 +59,7 @@
                             <div class="input-group form-group">
                             <span class="input-group-addon" id="sizing-addon2">
                                 <!-- <i class="glyphicon glyphicon-usd"></i> -->
-                                RTG
+                                RENTENG
                             </span>
                             <input type="text" class="form-control onlyNumber text-right v_hrgbeli_renteng" data-category="renteng" placeholder="0.00" name="v_hrgbeli_renteng" aria-describedby="sizing-addon2" maxlength="10">
                             </div>
@@ -102,7 +102,7 @@
                             <div class="input-group form-group">
                                 <span class="input-group-addon" id="sizing-addon2">
                                 <!-- <i class="glyphicon glyphicon-tag"></i> -->
-                                RTG
+                                RENTENG
                                 </span>
                                 <input type="text" class="form-control onlyNumber text-right sell" data-category="renteng" placeholder="0.00" name="v_renteng_hrgjual_retail" aria-describedby="sizing-addon2" maxlength="10">
                             </div>
@@ -139,7 +139,7 @@
                             <div class="input-group form-group">
                                 <span class="input-group-addon" id="sizing-addon2">
                                 <!-- <i class="glyphicon glyphicon-tags"></i> -->
-                                RTG
+                                RENTENG
                                 </span>
                                 <input type="text" class="form-control onlyNumber text-right sell" data-category="renteng" placeholder="0.00" name="v_renteng_hrgjual_grosir" aria-describedby="sizing-addon2" maxlength="10">
                             </div>

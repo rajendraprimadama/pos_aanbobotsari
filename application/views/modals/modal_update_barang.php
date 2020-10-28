@@ -71,10 +71,10 @@
                             <div class="input-group form-group">
                             <span class="input-group-addon" id="sizing-addon2">
                                 <!-- <i class="glyphicon glyphicon-usd"></i> -->
-                                RTG
+                                RENTENG
                             </span>
-                            <input type="text" class="form-control onlyNumber text-right v_hargabeli_pax_update"
-                                data-category="retail" placeholder="0.00" name="v_hrgbeli_retail" aria-describedby="sizing-addon2"
+                            <input type="text" class="form-control onlyNumber text-right v_hargabeli_renteng_update"
+                                data-category="renteng" placeholder="0.00" name="v_hrgbeli_renteng" aria-describedby="sizing-addon2"
                                 maxlength="10" value="<?php echo $dataBarang->hrg_beli_pax; ?>">
                             </div>
                         </div>
@@ -123,12 +123,12 @@
                             <div class="input-group form-group">
                             <span class="input-group-addon" id="sizing-addon2">
                                 <!-- <i class="glyphicon glyphicon-tag"></i> -->
-                                RTG
+                                RENTENG
                             </span>
-                            <input type="text" class="form-control onlyNumber text-right sell_update v_retail_hrgjual_retail_update"
-                                data-category="retail" placeholder="0.00" name="v_retail_hrgjual_retail"
+                            <input type="text" class="form-control onlyNumber text-right sell_update v_renteng_hrgjual_retail_update"
+                                data-category="renteng" placeholder="0.00" name="v_renteng_hrgjual_retail"
                                 aria-describedby="sizing-addon2" maxlength="10"
-                                value="<?php echo $dataBarang->pax_hrgjual_retail; ?>">
+                                value="<?php echo $dataBarang->renteng_hrgjual_retail; ?>">
                             </div>
 
                             <div class="input-group form-group">
@@ -172,12 +172,12 @@
                             <div class="input-group form-group">
                             <span class="input-group-addon" id="sizing-addon2">
                                 <!-- <i class="glyphicon glyphicon-tags"></i> -->
-                                RTG
+                                RENTENG
                             </span>
-                            <input type="text" class="form-control onlyNumber text-right sell_update v_retail_hrgjual_grosir_update"
-                                data-category="retail" placeholder="0.00" name="v_retail_hrgjual_grosir"
+                            <input type="text" class="form-control onlyNumber text-right sell_update v_renteng_hrgjual_grosir_update"
+                                data-category="renteng" placeholder="0.00" name="v_renteng_hrgjual_grosir"
                                 aria-describedby="sizing-addon2" maxlength="10"
-                                value="<?php echo $dataBarang->pax_hrgjual_grosir; ?>">
+                                value="<?php echo $dataBarang->renteng_hrgjual_grosir; ?>">
                             </div>
 
                             <div class="input-group form-group">
