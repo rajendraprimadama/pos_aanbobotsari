@@ -1,7 +1,7 @@
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/jquery-ui.js">
  <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ <script src="<?php echo base_url(); ?>assets/plugins/jQuery/jquery-2.2.3.min.js"></script>
+ <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
  <?php $this->load->view('_layout/_meta'); ?>
  <?php $this->load->view('_layout/_css'); ?>
 
@@ -46,17 +46,19 @@
                                 <th class="text-center" rowspan="2">Nama Barang</th>
                                 <th class="text-center" rowspan="2">Kategori</th>
 
-                                <th class="text-center" colspan="3">Harga Jual retail</th>
-                                <th class="text-center" colspan="3">Harga jual grosir</th>
+                                <th class="text-center" colspan="4">Harga Jual retail</th>
+                                <th class="text-center" colspan="4">Harga jual grosir</th>
 
                                 <th class="text-center" rowspan="2" maxwidth="25%">Keterangan</th>
                             </tr>
                             <tr class="text-uppercase">
                                 <th class="text-center">pcs</th>
-                                <th class="text-center">pax</th>
+                                <th class="text-center">renteng</th>
+                                <th class="text-center">pak</th>
                                 <th class="text-center">karton</th>
                                 <th class="text-center">pcs</th>
-                                <th class="text-center">pax</th>
+                                <th class="text-center">renteng</th>
+                                <th class="text-center">pak</th>
                                 <th class="text-center">karton</th>
                             </tr>
                             </thead>
@@ -72,9 +74,11 @@
                                                 <td><?php echo $val->nama_brg; ?></td>
                                                 <td><?php echo $val->kategori; ?></td>
                                                 <td class="text-right"><?php echo $val->pcs_hrgjual_retail; ?></td>
+                                                <td class="text-right"><?php echo $val->renteng_hrgjual_retail; ?></td>
                                                 <td class="text-right"><?php echo $val->pax_hrgjual_retail; ?></td>
                                                 <td class="text-right"><?php echo $val->dus_hrgjual_retail; ?></td>
                                                 <td class="text-right"><?php echo $val->pcs_hrgjual_grosir; ?></td>
+                                                <td class="text-right"><?php echo $val->renteng_hrgjual_grosir; ?></td>
                                                 <td class="text-right"><?php echo $val->pax_hrgjual_grosir; ?></td>
                                                 <td class="text-right"><?php echo $val->dus_hrgjual_grosir; ?></td>
                                                 <td><?php echo $val->keterangan; ?></td>

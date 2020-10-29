@@ -60,7 +60,7 @@ class Datatransaksi extends AUTH_Controller {
 
 		#filter harga beli
 		$satuan = strtolower($this->input->post('satuan'));
-		if($satuan=="rtg"){
+		if($satuan=="rt"){
 			$satuan="renteng";
 		}
 		$harga_beli = $i['hrg_beli_'.$satuan];

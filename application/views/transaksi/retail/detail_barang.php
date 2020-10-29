@@ -15,7 +15,7 @@ $b = $brg->row_array();
         <td style="width:380px;"></td>
         <td><select class="form-control SelectSatuan v_satuan_retail" name="v_satuan_retail" id="v_satuan_retail" data-category="retail">
             <option value="PCS" data-harga="<?php echo $b['pcs_hrgjual_retail']; ?>">PCS</option>
-            <option value="RTG" data-harga="<?php echo $b['renteng_hrgjual_retail']; ?>">RTG</option>
+            <option value="RT" data-harga="<?php echo $b['renteng_hrgjual_retail']; ?>">RENTENG</option>
             <option value="PAX" data-harga="<?php echo $b['pax_hrgjual_retail']; ?>">PAK</option>
             <option value="DUS" data-harga="<?php echo $b['dus_hrgjual_retail']; ?>">DUS</option>
         </select></td>
