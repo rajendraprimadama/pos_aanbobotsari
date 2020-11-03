@@ -142,6 +142,10 @@
                     _logic.reset_cart(element);
                     break;
 
+                case 'quantityChange':
+                    _logic.quantityChangebyButton(element);
+                    break;
+
                 default:
                     myAlert('warning','Action not declared');
                     break;
@@ -256,7 +260,8 @@
             let category = $(element).attr('data-category');
             let id = $(element).attr('data-index');
             let qty = $(`#v_list_qty_${category}.${id}`).val();
-            let harga = $(element).attr('data-harga');
+            // let harga = $(element).attr('data-harga');
+            let harga = $(`#v_list_qty_${category}.${id}`).attr('data-harga');
 
             $.ajax({
                     type: "POST",
@@ -307,6 +312,26 @@
                 $('#tab1').addClass('disabled').find('a').removeAttr("data-toggle");
                 $('#tab2').removeClass('disabled').find('a').attr("data-toggle","tab");
             }
+        },
+
+        quantityChangebyButton: (element) => {
+            let category = $(element).attr('data-category');
+            let index = $(element).attr('data-index');
+            let isQty = $(`#v_list_qty_${category}.${index}`).val();
+
+            if($(element).attr('data-type')=="minus"){
+                if(parseInt(isQty)<=1){
+                    myAlert('warning','Quantity harus lebih besar dari 0')
+                }
+                else {
+                    $(`#v_list_qty_${category}.${index}`).val(parseInt(isQty)-1).trigger('change');
+                }
+            }
+            
+            else if($(element).attr('data-type')=="plus"){
+                $(`#v_list_qty_${category}.${index}`).val(parseInt(isQty)+1).trigger('change');
+            }
+
         }
     }
 

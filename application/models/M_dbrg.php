@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class M_dbrg extends CI_Model {
 	public function select_all() {
 		// $data = $this->db->get('data_barang'); //merujuk database
-		$sql = "SELECT data_barang.*, data_kategori.kategori AS kategori FROM data_barang INNER JOIN data_kategori on data_barang.kategori = data_kategori.id ORDER BY id DESC";
+		$sql = "SELECT data_barang.*, data_kategori.kategori AS kategori FROM data_barang INNER JOIN data_kategori on data_barang.kategori = data_kategori.id ORDER BY id DESC, data_barang.kategori ASC";
 		$data = $this->db->query($sql);
 
 		return $data->result();
