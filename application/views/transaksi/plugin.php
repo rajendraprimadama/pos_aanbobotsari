@@ -131,6 +131,8 @@
                     })
                     .done(function(data) {
                         $(`.content-list-barang-${category}`).empty().html(data);
+                        masking();
+                        _page.submit();
                     })
                     break;
 
@@ -315,21 +317,32 @@
         },
 
         quantityChangebyButton: (element) => {
+            let forThis = $(element).attr('data-for');
             let category = $(element).attr('data-category');
             let index = $(element).attr('data-index');
-            let isQty = $(`#v_list_qty_${category}.${index}`).val();
+            let isQty = forThis==="header" ? $(`#v_qty_${category}`).val() : $(`#v_list_qty_${category}.${index}`).val();
 
             if($(element).attr('data-type')=="minus"){
                 if(parseInt(isQty)<=1){
                     myAlert('warning','Quantity harus lebih besar dari 0')
                 }
                 else {
-                    $(`#v_list_qty_${category}.${index}`).val(parseInt(isQty)-1).trigger('change');
+                    if(forThis==="header"){
+                        $(`#v_qty_${category}`).val(parseInt(isQty)-1);
+                    }
+                    else{
+                        $(`#v_list_qty_${category}.${index}`).val(parseInt(isQty)-1).trigger('change');
+                    }
                 }
             }
             
             else if($(element).attr('data-type')=="plus"){
-                $(`#v_list_qty_${category}.${index}`).val(parseInt(isQty)+1).trigger('change');
+                if(forThis==="header"){
+                    $(`#v_qty_${category}`).val(parseInt(isQty)+1);
+                }
+                else{
+                    $(`#v_list_qty_${category}.${index}`).val(parseInt(isQty)+1).trigger('change');
+                }
             }
 
         }

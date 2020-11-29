@@ -4,7 +4,7 @@
 
 <div class="box skin-blue sidebar-mini sidebar-collapse" id="halaman">
 
-    <div class="box-header">
+    <div class="box-header" style="padding-top:0px">
         <div class="col-md-30">
             <section class="content">
                 <div class="row">
@@ -20,10 +20,12 @@
                                 <li class="tabKasir active" id="tab1" data-category="retail"><a href="#tab_1" data-toggle="tab">Jual Ecer</a></li>
                                 <li class="tabKasir" id="tab2" data-category="grosir"><a href="#tab_2" data-toggle="tab">Jual Grosir</a></li>
                             </ul>
-                            <div class="tab-content">
+                            <div class="tab-content" style="padding-top:0px">
                                 <div class="tab-pane tabKasir active" id="tab_1">
-                                    <?php $this->load->view('transaksi/retail/header_barang'); ?>
-
+                                    <div class="header-barang">
+                                        <?php $this->load->view('transaksi/retail/header_barang'); ?>
+                                    </div>
+                                    <hr>
                                     <div class="content-list-barang-retail">
                                         <?php $this->load->view('transaksi/retail/list_barang'); ?>
                                     </div>

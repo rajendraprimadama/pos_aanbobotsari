@@ -161,15 +161,15 @@ $b=$datatransaksi->row_array();
         </div>
     </body>
     <script type="text/javascript">
-    //     window.onload = function(){
-    //       window.print();
-    //       //window.location.href = '<?php echo base_url(); ?>Datatransaksi';
-    //       window.onafterprint = function(e){
-    //         closePrintView();
-    //     };
-    //     function closePrintView() {
-    //         window.location.href = '<?php echo base_url(); ?>Datatransaksi';   
-    //     }
-    // };
+        window.onload = function(){
+          window.print();
+          //window.location.href = '<?php echo base_url(); ?>Datatransaksi';
+          window.onafterprint = function(e){
+            closePrintView();
+        };
+        function closePrintView() {
+            window.location.href = '<?php echo base_url(); ?>Datatransaksi';   
+        }
+    };
 </script>
 </html>
