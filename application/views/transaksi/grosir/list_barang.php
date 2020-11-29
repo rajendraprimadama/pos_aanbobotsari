@@ -2,13 +2,13 @@
 <table class="table table-bordered table-condensed" style="font-size:11px;margin-top:10px;">
     <thead>
     <tr>
-        <th>Kode Barcode</th>
-        <th>Nama Barang</th>
-        <th style="text-align:center;">Satuan</th>
-        <th style="text-align:center;">Harga(Rp)</th>
-        <th style="text-align:center;">Qty</th>
-        <th style="text-align:center;">Sub Total</th>
-        <th style="width:100px;text-align:center;">Aksi</th>
+        <th style="background-color:#A9A9A9">Kode Barcode</th>
+        <th style="background-color:#A9A9A9">Nama Barang</th>
+        <th style="text-align:center; background-color:#A9A9A9">Satuan</th>
+        <th style="text-align:center; background-color:#A9A9A9">Harga(Rp)</th>
+        <th style="text-align:center; background-color:#A9A9A9">Qty</th>
+        <th style="text-align:center; background-color:#A9A9A9">Sub Total</th>
+        <th style="width:100px;text-align:center; background-color:#A9A9A9">Aksi</th>
     </tr>
     </thead> 
     <tbody>
@@ -52,7 +52,7 @@
     endforeach;
     else:
         ?>
-        <tr><td class="text-center" colspan="100%">Tidak ada barang</td></tr>
+        <tr><td class="text-center text-muted" colspan="100%">Tidak ada barang</td></tr>
         <?php
     endif;
     ?>
@@ -64,8 +64,8 @@
     <table>
     <tr>
         <td style="width:760px;" rowspan="2">
-            <button type="submit" class="btn btn-info btn-lg"> Bayar</button>
-            <button type="button" class="btn btn-danger btn-lg btn-act" data-action="reset" data-category="grosir"> Reset</button>
+            <button style="width:30%" type="submit" class="btn btn-info btn-lg"> Bayar</button>
+            <button style="width:30%" type="button" class="btn btn-danger btn-lg btn-act" data-action="reset" data-category="grosir"> Reset</button>
         </td>
         <th style="width:140px;">Total Belanja(Rp)</th>
         <th style="text-align:right;width:140px;">

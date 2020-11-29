@@ -26,13 +26,17 @@
                                         <?php $this->load->view('transaksi/retail/header_barang'); ?>
                                     </div>
                                     <hr>
+                                    
                                     <div class="content-list-barang-retail">
                                         <?php $this->load->view('transaksi/retail/list_barang'); ?>
                                     </div>
                                 </div>
                                 <!-- /.tab-pane -->
                                 <div class="tab-pane tabKasir" id="tab_2">
-                                    <?php $this->load->view('transaksi/grosir/header_barang'); ?>
+                                    <div class="header-barang">
+                                        <?php $this->load->view('transaksi/grosir/header_barang'); ?>
+                                    </div>
+                                    <hr>
 
                                     <div class="content-list-barang-grosir">
                                         <?php $this->load->view('transaksi/grosir/list_barang'); ?>

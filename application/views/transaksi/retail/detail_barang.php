@@ -4,9 +4,9 @@ $b = $brg->row_array();
 <table class="table">
     <input type="hidden" name="v_id_barang_retail" id="v_id_barang_retail" value="<?php echo $b['id_brg']; ?>">
     <tr>
-        <th style="border-top: none !important; background-color:yellow; font-size:15px">Satuan</th>
-        <th style="border-top: none !important; background-color:yellow; font-size:15px">Harga(Rp)</th>
-        <th style="border-top: none !important; background-color:yellow; font-size:15px" colspan="2">Jumlah</th>
+        <th style="border-top: none !important; background-color:#98FB98; font-size:15px">Satuan</th>
+        <th style="border-top: none !important; background-color:#98FB98; font-size:15px">Harga(Rp)</th>
+        <th style="border-top: none !important; background-color:#98FB98; font-size:15px" colspan="2">Jumlah</th>
     </tr>
     <tr>
         <td>
@@ -37,6 +37,6 @@ $b = $brg->row_array();
         </td>
         <td style="width:20%">
             <button type="button" class="btn btn-sm btn-primary btn-act" data-action="add-cart" data-category="retail" style="width:100%">Ok</button>
-            </td>
+        </td>
     </tr>
 </table>

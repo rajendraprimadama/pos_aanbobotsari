@@ -1,8 +1,8 @@
 <div class="col-md-6" style="padding-left: 0px">
     <table class="table">
         <tr>
-            <th style="border-top: none !important; background-color:yellow; font-size:15px; width: 25%">Kode Barcode</th>
-            <th style="border-top: none !important; background-color:yellow; font-size:15px">Nama Barang</th>
+            <th style="border-top: none !important; background-color:#98FB98; font-size:15px; width: 25%">Kode Barcode</th>
+            <th style="border-top: none !important; background-color:#98FB98; font-size:15px">Nama Barang</th>
         </tr>
         <tr>
             <th>

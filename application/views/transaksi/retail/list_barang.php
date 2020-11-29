@@ -2,13 +2,13 @@
 <table class="table table-bordered table-condensed" style="font-size:11px;margin-top:10px;">
     <thead>
     <tr>
-        <th style="background-color:yellow">Kode Barcode</th>
-        <th style="background-color:yellow">Nama Barang</th>
-        <th style="text-align:center; background-color:yellow">Satuan</th>
-        <th style="text-align:center; background-color:yellow">Harga(Rp)</th>
-        <th style="text-align:center; background-color:yellow">Qty</th>
-        <th style="text-align:center; background-color:yellow">Sub Total</th>
-        <th style="width:100px;text-align:center; background-color:yellow">Aksi</th>
+        <th style="background-color:#A9A9A9">Kode Barcode</th>
+        <th style="background-color:#A9A9A9">Nama Barang</th>
+        <th style="text-align:center; background-color:#A9A9A9">Satuan</th>
+        <th style="text-align:center; background-color:#A9A9A9">Harga(Rp)</th>
+        <th style="text-align:center; background-color:#A9A9A9">Qty</th>
+        <th style="text-align:center; background-color:#A9A9A9">Sub Total</th>
+        <th style="width:100px;text-align:center; background-color:#A9A9A9">Aksi</th>
     </tr>
     </thead> 
     <tbody>
