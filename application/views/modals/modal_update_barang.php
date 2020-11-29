@@ -254,6 +254,18 @@
       })
     })
 
+    $(document).on('change', '.v_hargabeli_renteng_update', function(event){
+        event.preventDefault();
+        var arrObj = [
+          'v_renteng_hrgjual_retail_update',
+          'v_renteng_hrgjual_grosir_update',
+        ];
+
+        arrObj.forEach((item) => {
+          $(`.${item}`).val('')
+        })
+    })
+
     $(document).on('change', '.v_hargabeli_dus_update', function (event) {
       event.preventDefault();
       var arrObj = [

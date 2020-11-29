@@ -206,6 +206,18 @@
         })
     })
 
+    $(document).on('change', '.v_hrgbeli_renteng', function(event){
+        event.preventDefault();
+        var arrObj = [
+          'v_renteng_hrgjual_retail',
+          'v_renteng_hrgjual_grosir',
+        ];
+
+        arrObj.forEach((item) => {
+          $(`input[name=${item}]`).val('')
+        })
+    })
+
     $(document).on('change', '.v_hrgbeli_pax', function(event){
         event.preventDefault();
         var arrObj = [
