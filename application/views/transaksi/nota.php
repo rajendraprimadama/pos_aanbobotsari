@@ -16,10 +16,6 @@
         height:0px !important;
     }
 
-    body, html { 
-        margin:0; 
-        padding:0; 
-    }
     * 
     {
         font-size: 18px;
