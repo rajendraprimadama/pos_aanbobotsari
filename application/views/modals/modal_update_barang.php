@@ -75,7 +75,7 @@
                             </span>
                             <input type="text" class="form-control onlyNumber text-right v_hargabeli_renteng_update"
                                 data-category="renteng" placeholder="0.00" name="v_hrgbeli_renteng" aria-describedby="sizing-addon2"
-                                maxlength="10" value="<?php echo $dataBarang->hrg_beli_pax; ?>">
+                                maxlength="10" value="<?php echo $dataBarang->hrg_beli_renteng; ?>">
                             </div>
                         </div>
                         <div class="col-md-6">
