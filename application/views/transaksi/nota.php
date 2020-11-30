@@ -5,17 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" media="print">
     <title>Nota Penjualan</title>
     <style type="text/css">
-      @page {
+    @page {
         size: auto;
         margin: 0;
         margin-top: 0;
         padding: 0;
         height:0px !important;
     }
-    * {
+
+    body, html { 
+        margin:0; 
+        padding:0; 
+    }
+    * 
+    {
         font-size: 18px;
         font-family: 'Calibri';
     }
