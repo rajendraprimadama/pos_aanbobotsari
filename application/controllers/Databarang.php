@@ -44,19 +44,19 @@ class Databarang extends AUTH_Controller {
 				$out['msg'] = show_err_msg('Data Barang sudah ada', '15px');
 			} else {
 
-				if(((float) $data['v_hrgbeli_pcs'] > (float) $data['v_pcs_hrgjual_retail']) || ((float) $data['v_hrgbeli_pcs'] > (float) $data['v_pcs_hrgjual_grosir'])){
+				if(((float) $this->saveInt($data['v_hrgbeli_pcs']) > (float) $this->saveInt($data['v_pcs_hrgjual_retail'])) || ((float) $this->saveInt($data['v_hrgbeli_pcs']) > (float) $this->saveInt($data['v_pcs_hrgjual_grosir']))){
 					$out['status'] = '';
 					$out['msg'] = show_err_msg('Harga Jual PCS harus lebih besar dari harga beli', '15px');
 				}
-				else if(($data['v_hrgbeli_pax'] > $data['v_pax_hrgjual_retail']) || ($data['v_hrgbeli_pax'] > $data['v_pax_hrgjual_grosir'])){
+				else if(((float) $this->saveInt($data['v_hrgbeli_pax']) > (float) $this->saveInt($data['v_pax_hrgjual_retail'])) || ((float) $this->saveInt($data['v_hrgbeli_pax']) > (float) $this->saveInt($data['v_pax_hrgjual_grosir']))){
 					$out['status'] = '';
 					$out['msg'] = show_err_msg('Harga Jual PAK harus lebih besar dari harga beli', '15px');
 				}
-				else if(($data['v_hrgbeli_renteng'] > $data['v_renteng_hrgjual_retail']) || ($data['v_hrgbeli_renteng'] > $data['v_renteng_hrgjual_grosir'])){
+				else if(((float) $this->saveInt($data['v_hrgbeli_renteng']) > (float) $this->saveInt($data['v_renteng_hrgjual_retail'])) || ((float) $this->saveInt($data['v_hrgbeli_renteng']) > (float) $this->saveInt($data['v_renteng_hrgjual_grosir']))){
 					$out['status'] = '';
 					$out['msg'] = show_err_msg('Harga Jual RENTENG harus lebih besar dari harga beli', '15px');
 				}
-				else if(($data['v_hrgbeli_dus'] > $data['v_dus_hrgjual_retail']) || ($data['v_hrgbeli_dus'] > $data['v_dus_hrgjual_grosir'])){
+				else if(((float) $this->saveInt($data['v_hrgbeli_dus']) > (float) $this->saveInt($data['v_dus_hrgjual_retail'])) || ((float) $this->saveInt($data['v_hrgbeli_dus']) > (float) $this->saveInt($data['v_dus_hrgjual_grosir']))){
 					$out['status'] = '';
 					$out['msg'] = show_err_msg('Harga Jual DUS harus lebih besar dari harga beli', '15px');
 				}
@@ -100,19 +100,19 @@ class Databarang extends AUTH_Controller {
 		$data 	= $this->input->post();
 		if ($this->form_validation->run() == TRUE) {
 
-			if(((float) $data['v_hrgbeli_pcs'] > (float) $data['v_pcs_hrgjual_retail']) || ((float) $data['v_hrgbeli_pcs'] > (float) $data['v_pcs_hrgjual_grosir'])){
+			if(((float) $this->saveInt($data['v_hrgbeli_pcs']) > (float) $this->saveInt($data['v_pcs_hrgjual_retail'])) || ((float) $this->saveInt($data['v_hrgbeli_pcs']) > (float) $this->saveInt($data['v_pcs_hrgjual_grosir']))){
 				$out['status'] = '';
 				$out['msg'] = show_err_msg('Harga Jual PCS harus lebih besar dari harga beli', '15px');
 			}
-			else if(($data['v_hrgbeli_pax'] > $data['v_pax_hrgjual_retail']) || ($data['v_hrgbeli_pax'] > $data['v_pax_hrgjual_grosir'])){
+			else if(((float) $this->saveInt($data['v_hrgbeli_pax']) > (float) $this->saveInt($data['v_pax_hrgjual_retail'])) || ((float) $this->saveInt($data['v_hrgbeli_pax']) > (float) $this->saveInt($data['v_pax_hrgjual_grosir']))){
 				$out['status'] = '';
 				$out['msg'] = show_err_msg('Harga Jual PAK harus lebih besar dari harga beli', '15px');
 			}
-			else if(($data['v_hrgbeli_renteng'] > $data['v_renteng_hrgjual_retail']) || ($data['v_hrgbeli_renteng'] > $data['v_renteng_hrgjual_grosir'])){
+			else if(((float) $this->saveInt($data['v_hrgbeli_renteng']) > (float) $this->saveInt($data['v_renteng_hrgjual_retail'])) || ((float) $this->saveInt($data['v_hrgbeli_renteng']) > (float) $this->saveInt($data['v_renteng_hrgjual_grosir']))){
 				$out['status'] = '';
 				$out['msg'] = show_err_msg('Harga Jual RENTENG harus lebih besar dari harga beli', '15px');
 			}
-			else if(($data['v_hrgbeli_dus'] > $data['v_dus_hrgjual_retail']) || ($data['v_hrgbeli_dus'] > $data['v_dus_hrgjual_grosir'])){
+			else if(((float) $this->saveInt($data['v_hrgbeli_dus']) > (float) $this->saveInt($data['v_dus_hrgjual_retail'])) || ((float) $this->saveInt($data['v_hrgbeli_dus']) > (float) $this->saveInt($data['v_dus_hrgjual_grosir']))){
 				$out['status'] = '';
 				$out['msg'] = show_err_msg('Harga Jual DUS harus lebih besar dari harga beli', '15px');
 			}
@@ -157,6 +157,20 @@ class Databarang extends AUTH_Controller {
 		catch (Exception $e) {
 			throw $e;
 		}
+	}
+
+	private function saveInt($param) {
+		$hasil = '';
+
+        if($param){
+            $nilai  = trim(str_replace("`", "", $param));
+            $hasil  = str_replace(",", "", $nilai);
+        }
+        else{
+            $hasil = '0';
+        }
+
+        return $hasil;
 	}
 }
 /* End of file Posisi.php */
