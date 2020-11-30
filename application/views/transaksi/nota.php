@@ -30,21 +30,21 @@
 
     td.description,
     th.description {
-        width: 60%;
-        max-width: 60%;
+        width: 40%;
+        max-width: 40%;
     }
 
     td.quantity,
     th.quantity {
-        width: 8%;
-        max-width: 8%;
+        width: 10%;
+        max-width: 10%;
         word-break: break-all;
     }
 
     td.price,
     th.price {
-        width: 22%;
-        max-width: 22%;
+        width: 30%;
+        max-width: 30%;
         word-break: break-all;
         /* margin-left: 20px; */
         text-align: right;
