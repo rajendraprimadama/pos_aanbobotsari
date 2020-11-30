@@ -64,7 +64,7 @@
                             </span>
                             <input type="text" class="form-control FormatKey onlyNumber text-right v_hargabeli_pcs_update"
                                 data-category="pcs" placeholder="0.00" name="v_hrgbeli_pcs" aria-describedby="sizing-addon2"
-                                maxlength="10" value="<?php echo $dataBarang->hrg_beli_pcs; ?>">
+                                maxlength="10" value="<?php echo number_format($dataBarang->hrg_beli_pcs); ?>">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -75,7 +75,7 @@
                             </span>
                             <input type="text" class="form-control onlyNumber text-right v_hargabeli_renteng_update"
                                 data-category="renteng" placeholder="0.00" name="v_hrgbeli_renteng" aria-describedby="sizing-addon2"
-                                maxlength="10" value="<?php echo $dataBarang->hrg_beli_renteng; ?>">
+                                maxlength="10" value="<?php echo number_format($dataBarang->hrg_beli_renteng); ?>">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -86,7 +86,7 @@
                             </span>
                             <input type="text" class="form-control onlyNumber text-right v_hargabeli_pax_update"
                                 data-category="pax" placeholder="0.00" name="v_hrgbeli_pax" aria-describedby="sizing-addon2"
-                                maxlength="10" value="<?php echo $dataBarang->hrg_beli_pax; ?>">
+                                maxlength="10" value="<?php echo number_format($dataBarang->hrg_beli_pax); ?>">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -97,7 +97,7 @@
                             </span>
                             <input type="text" class="form-control onlyNumber text-right v_hargabeli_dus_update"
                                 data-category="dus" placeholder="0.00" name="v_hrgbeli_dus" aria-describedby="sizing-addon2"
-                                maxlength="10" value="<?php echo $dataBarang->hrg_beli_dus; ?>">
+                                maxlength="10" value="<?php echo number_format($dataBarang->hrg_beli_dus); ?>">
                             </div>
                         </div>
                         </div>
@@ -117,7 +117,7 @@
                             <input type="text" class="form-control onlyNumber text-right sell_update v_pcs_hrgjual_retail_update"
                                 data-category="pcs" placeholder="0.00" name="v_pcs_hrgjual_retail"
                                 aria-describedby="sizing-addon2" maxlength="10"
-                                value="<?php echo $dataBarang->pcs_hrgjual_retail; ?>">
+                                value="<?php echo number_format($dataBarang->pcs_hrgjual_retail); ?>">
                             </div>
 
                             <div class="input-group form-group">
@@ -128,7 +128,7 @@
                             <input type="text" class="form-control onlyNumber text-right sell_update v_renteng_hrgjual_retail_update"
                                 data-category="renteng" placeholder="0.00" name="v_renteng_hrgjual_retail"
                                 aria-describedby="sizing-addon2" maxlength="10"
-                                value="<?php echo $dataBarang->renteng_hrgjual_retail; ?>">
+                                value="<?php echo number_format($dataBarang->renteng_hrgjual_retail); ?>">
                             </div>
 
                             <div class="input-group form-group">
@@ -139,7 +139,7 @@
                             <input type="text" class="form-control onlyNumber text-right sell_update v_pax_hrgjual_retail_update"
                                 data-category="pax" placeholder="0.00" name="v_pax_hrgjual_retail"
                                 aria-describedby="sizing-addon2" maxlength="10"
-                                value="<?php echo $dataBarang->pax_hrgjual_retail; ?>">
+                                value="<?php echo number_format($dataBarang->pax_hrgjual_retail); ?>">
                             </div>
 
                             <div class="input-group form-group">
@@ -150,7 +150,7 @@
                             <input type="text" class="form-control onlyNumber text-right sell_update v_dus_hrgjual_retail_update"
                                 data-category="dus" placeholder="0.00" name="v_dus_hrgjual_retail"
                                 aria-describedby="sizing-addon2" maxlength="10"
-                                value="<?php echo $dataBarang->dus_hrgjual_retail; ?>">
+                                value="<?php echo number_format($dataBarang->dus_hrgjual_retail); ?>">
                             </div>
                         </fieldset>
                         </div>
@@ -166,7 +166,7 @@
                             <input type="text" class="form-control onlyNumber text-right sell_update v_pcs_hrgjual_grosir_update"
                                 data-category="pcs" placeholder="0.00" name="v_pcs_hrgjual_grosir"
                                 aria-describedby="sizing-addon2" maxlength="10"
-                                value="<?php echo $dataBarang->pcs_hrgjual_grosir; ?>">
+                                value="<?php echo number_format($dataBarang->pcs_hrgjual_grosir); ?>">
                             </div>
 
                             <div class="input-group form-group">
@@ -177,7 +177,7 @@
                             <input type="text" class="form-control onlyNumber text-right sell_update v_renteng_hrgjual_grosir_update"
                                 data-category="renteng" placeholder="0.00" name="v_renteng_hrgjual_grosir"
                                 aria-describedby="sizing-addon2" maxlength="10"
-                                value="<?php echo $dataBarang->renteng_hrgjual_grosir; ?>">
+                                value="<?php echo number_format($dataBarang->renteng_hrgjual_grosir); ?>">
                             </div>
 
                             <div class="input-group form-group">
@@ -188,7 +188,7 @@
                             <input type="text" class="form-control onlyNumber text-right sell_update v_pax_hrgjual_grosir_update"
                                 data-category="pax" placeholder="0.00" name="v_pax_hrgjual_grosir"
                                 aria-describedby="sizing-addon2" maxlength="10"
-                                value="<?php echo $dataBarang->pax_hrgjual_grosir; ?>">
+                                value="<?php echo number_format($dataBarang->pax_hrgjual_grosir); ?>">
                             </div>
 
                             <div class="input-group form-group">
@@ -199,7 +199,7 @@
                             <input type="text" class="form-control onlyNumber text-right sell_update v_dus_hrgjual_grosir_update"
                                 data-category="dus" placeholder="0.00" name="v_dus_hrgjual_grosir"
                                 aria-describedby="sizing-addon2" maxlength="10"
-                                value="<?php echo $dataBarang->dus_hrgjual_grosir; ?>">
+                                value="<?php echo number_format($dataBarang->dus_hrgjual_grosir); ?>">
                             </div>
                         </fieldset>
                         </div>
