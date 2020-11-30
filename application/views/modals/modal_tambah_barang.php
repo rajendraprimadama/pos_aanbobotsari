@@ -52,7 +52,7 @@
                                 <!-- <i class="glyphicon glyphicon-usd"></i> -->
                                 PCS
                             </span>
-                            <input type="text" class="form-control onlyNumber text-right v_hrgbeli_pcs" data-category="pcs" placeholder="0.00" name="v_hrgbeli_pcs" aria-describedby="sizing-addon2" maxlength="10">
+                            <input type="text" class="form-control FormatKey onlyNumber text-right v_hrgbeli_pcs" data-category="pcs" placeholder="0.00" name="v_hrgbeli_pcs" aria-describedby="sizing-addon2" maxlength="10">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -61,7 +61,7 @@
                                 <!-- <i class="glyphicon glyphicon-usd"></i> -->
                                 RENTENG
                             </span>
-                            <input type="text" class="form-control onlyNumber text-right v_hrgbeli_renteng" data-category="renteng" placeholder="0.00" name="v_hrgbeli_renteng" aria-describedby="sizing-addon2" maxlength="10">
+                            <input type="text" class="form-control FormatKey onlyNumber text-right v_hrgbeli_renteng" data-category="renteng" placeholder="0.00" name="v_hrgbeli_renteng" aria-describedby="sizing-addon2" maxlength="10">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -70,7 +70,7 @@
                                 <!-- <i class="glyphicon glyphicon-usd"></i> -->
                                 PAK
                             </span>
-                            <input type="text" class="form-control onlyNumber text-right v_hrgbeli_pax" data-category="pax" placeholder="0.00" name="v_hrgbeli_pax" aria-describedby="sizing-addon2" maxlength="10">
+                            <input type="text" class="form-control FormatKey onlyNumber text-right v_hrgbeli_pax" data-category="pax" placeholder="0.00" name="v_hrgbeli_pax" aria-describedby="sizing-addon2" maxlength="10">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -79,7 +79,7 @@
                                 <!-- <i class="glyphicon glyphicon-usd"></i> -->
                                 DUS
                             </span>
-                            <input type="text" class="form-control onlyNumber text-right v_hrgbeli_dus" data-category="dus" placeholder="0.00" name="v_hrgbeli_dus" aria-describedby="sizing-addon2" maxlength="10">
+                            <input type="text" class="form-control FormatKey onlyNumber text-right v_hrgbeli_dus" data-category="dus" placeholder="0.00" name="v_hrgbeli_dus" aria-describedby="sizing-addon2" maxlength="10">
                             </div>
                         </div>
                         </div>
@@ -96,7 +96,7 @@
                                 <!-- <i class="glyphicon glyphicon-tag"></i> -->
                                 PCS
                                 </span>
-                                <input type="text" class="form-control onlyNumber text-right sell" data-category="pcs" placeholder="0.00" name="v_pcs_hrgjual_retail" aria-describedby="sizing-addon2" maxlength="10">
+                                <input type="text" class="form-control FormatKey onlyNumber text-right sell" data-category="pcs" placeholder="0.00" name="v_pcs_hrgjual_retail" aria-describedby="sizing-addon2" maxlength="10">
                             </div>
 
                             <div class="input-group form-group">
@@ -104,7 +104,7 @@
                                 <!-- <i class="glyphicon glyphicon-tag"></i> -->
                                 RENTENG
                                 </span>
-                                <input type="text" class="form-control onlyNumber text-right sell" data-category="renteng" placeholder="0.00" name="v_renteng_hrgjual_retail" aria-describedby="sizing-addon2" maxlength="10">
+                                <input type="text" class="form-control FormatKey onlyNumber text-right sell" data-category="renteng" placeholder="0.00" name="v_renteng_hrgjual_retail" aria-describedby="sizing-addon2" maxlength="10">
                             </div>
 
                             <div class="input-group form-group">
@@ -112,7 +112,7 @@
                                 <!-- <i class="glyphicon glyphicon-tag"></i> -->
                                 PAK
                                 </span>
-                                <input type="text" class="form-control onlyNumber text-right sell" data-category="pax" placeholder="0.00" name="v_pax_hrgjual_retail" aria-describedby="sizing-addon2" maxlength="10">
+                                <input type="text" class="form-control FormatKey onlyNumber text-right sell" data-category="pax" placeholder="0.00" name="v_pax_hrgjual_retail" aria-describedby="sizing-addon2" maxlength="10">
                             </div>
 
                             <div class="input-group form-group">
@@ -120,7 +120,7 @@
                                 <!-- <i class="glyphicon glyphicon-tag"></i> -->
                                 DUS
                                 </span>
-                                <input type="text" class="form-control onlyNumber text-right sell" data-category="dus" placeholder="0.00" name="v_dus_hrgjual_retail" aria-describedby="sizing-addon2" maxlength="10">
+                                <input type="text" class="form-control FormatKey onlyNumber text-right sell" data-category="dus" placeholder="0.00" name="v_dus_hrgjual_retail" aria-describedby="sizing-addon2" maxlength="10">
                             </div>
                             </fieldset>
                         </div>
@@ -133,7 +133,7 @@
                                 <!-- <i class="glyphicon glyphicon-tags"></i> -->
                                 PCS
                                 </span>
-                                <input type="text" class="form-control onlyNumber text-right sell" data-category="pcs" placeholder="0.00" name="v_pcs_hrgjual_grosir" aria-describedby="sizing-addon2" maxlength="10">
+                                <input type="text" class="form-control FormatKey onlyNumber text-right sell" data-category="pcs" placeholder="0.00" name="v_pcs_hrgjual_grosir" aria-describedby="sizing-addon2" maxlength="10">
                             </div>
 
                             <div class="input-group form-group">
@@ -141,7 +141,7 @@
                                 <!-- <i class="glyphicon glyphicon-tags"></i> -->
                                 RENTENG
                                 </span>
-                                <input type="text" class="form-control onlyNumber text-right sell" data-category="renteng" placeholder="0.00" name="v_renteng_hrgjual_grosir" aria-describedby="sizing-addon2" maxlength="10">
+                                <input type="text" class="form-control FormatKey onlyNumber text-right sell" data-category="renteng" placeholder="0.00" name="v_renteng_hrgjual_grosir" aria-describedby="sizing-addon2" maxlength="10">
                             </div>
 
                             <div class="input-group form-group">
@@ -149,7 +149,7 @@
                                 <!-- <i class="glyphicon glyphicon-tags"></i> -->
                                 PAK
                                 </span>
-                                <input type="text" class="form-control onlyNumber text-right sell" data-category="pax" placeholder="0.00" name="v_pax_hrgjual_grosir" aria-describedby="sizing-addon2" maxlength="10">
+                                <input type="text" class="form-control FormatKey onlyNumber text-right sell" data-category="pax" placeholder="0.00" name="v_pax_hrgjual_grosir" aria-describedby="sizing-addon2" maxlength="10">
                             </div>
 
                             <div class="input-group form-group">
@@ -157,7 +157,7 @@
                                 <!-- <i class="glyphicon glyphicon-tags"></i> -->
                                 DUS
                                 </span>
-                                <input type="text" class="form-control onlyNumber text-right sell" data-category="dus" placeholder="0.00" name="v_dus_hrgjual_grosir" aria-describedby="sizing-addon2" maxlength="10">
+                                <input type="text" class="form-control FormatKey onlyNumber text-right sell" data-category="dus" placeholder="0.00" name="v_dus_hrgjual_grosir" aria-describedby="sizing-addon2" maxlength="10">
                             </div>
                             </fieldset>
                         </div>
