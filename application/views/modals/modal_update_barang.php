@@ -62,7 +62,7 @@
                                 <!-- <i class="glyphicon glyphicon-usd"></i> -->
                                 PCS
                             </span>
-                            <input type="text" class="form-control onlyNumber text-right v_hargabeli_pcs_update"
+                            <input type="text" class="form-control FormatKey onlyNumber text-right v_hargabeli_pcs_update"
                                 data-category="pcs" placeholder="0.00" name="v_hrgbeli_pcs" aria-describedby="sizing-addon2"
                                 maxlength="10" value="<?php echo $dataBarang->hrg_beli_pcs; ?>">
                             </div>
