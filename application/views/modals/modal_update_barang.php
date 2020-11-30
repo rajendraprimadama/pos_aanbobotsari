@@ -73,7 +73,7 @@
                                 <!-- <i class="glyphicon glyphicon-usd"></i> -->
                                 RENTENG
                             </span>
-                            <input type="text" class="form-control onlyNumber text-right v_hargabeli_renteng_update"
+                            <input type="text" class="form-control FormatKey onlyNumber text-right v_hargabeli_renteng_update"
                                 data-category="renteng" placeholder="0.00" name="v_hrgbeli_renteng" aria-describedby="sizing-addon2"
                                 maxlength="10" value="<?php echo number_format($dataBarang->hrg_beli_renteng); ?>">
                             </div>
@@ -84,7 +84,7 @@
                                 <!-- <i class="glyphicon glyphicon-usd"></i> -->
                                 PAK
                             </span>
-                            <input type="text" class="form-control onlyNumber text-right v_hargabeli_pax_update"
+                            <input type="text" class="form-control FormatKey onlyNumber text-right v_hargabeli_pax_update"
                                 data-category="pax" placeholder="0.00" name="v_hrgbeli_pax" aria-describedby="sizing-addon2"
                                 maxlength="10" value="<?php echo number_format($dataBarang->hrg_beli_pax); ?>">
                             </div>
@@ -95,7 +95,7 @@
                                 <!-- <i class="glyphicon glyphicon-usd"></i> -->
                                 DUS
                             </span>
-                            <input type="text" class="form-control onlyNumber text-right v_hargabeli_dus_update"
+                            <input type="text" class="form-control FormatKey onlyNumber text-right v_hargabeli_dus_update"
                                 data-category="dus" placeholder="0.00" name="v_hrgbeli_dus" aria-describedby="sizing-addon2"
                                 maxlength="10" value="<?php echo number_format($dataBarang->hrg_beli_dus); ?>">
                             </div>
@@ -114,7 +114,7 @@
                                 <!-- <i class="glyphicon glyphicon-tag"></i> -->
                                 PCS
                             </span>
-                            <input type="text" class="form-control onlyNumber text-right sell_update v_pcs_hrgjual_retail_update"
+                            <input type="text" class="form-control FormatKey onlyNumber text-right sell_update v_pcs_hrgjual_retail_update"
                                 data-category="pcs" placeholder="0.00" name="v_pcs_hrgjual_retail"
                                 aria-describedby="sizing-addon2" maxlength="10"
                                 value="<?php echo number_format($dataBarang->pcs_hrgjual_retail); ?>">
@@ -125,7 +125,7 @@
                                 <!-- <i class="glyphicon glyphicon-tag"></i> -->
                                 RENTENG
                             </span>
-                            <input type="text" class="form-control onlyNumber text-right sell_update v_renteng_hrgjual_retail_update"
+                            <input type="text" class="form-control FormatKey onlyNumber text-right sell_update v_renteng_hrgjual_retail_update"
                                 data-category="renteng" placeholder="0.00" name="v_renteng_hrgjual_retail"
                                 aria-describedby="sizing-addon2" maxlength="10"
                                 value="<?php echo number_format($dataBarang->renteng_hrgjual_retail); ?>">
@@ -136,7 +136,7 @@
                                 <!-- <i class="glyphicon glyphicon-tag"></i> -->
                                 PAK
                             </span>
-                            <input type="text" class="form-control onlyNumber text-right sell_update v_pax_hrgjual_retail_update"
+                            <input type="text" class="form-control FormatKey onlyNumber text-right sell_update v_pax_hrgjual_retail_update"
                                 data-category="pax" placeholder="0.00" name="v_pax_hrgjual_retail"
                                 aria-describedby="sizing-addon2" maxlength="10"
                                 value="<?php echo number_format($dataBarang->pax_hrgjual_retail); ?>">
@@ -147,7 +147,7 @@
                                 <!-- <i class="glyphicon glyphicon-tag"></i> -->
                                 DUS
                             </span>
-                            <input type="text" class="form-control onlyNumber text-right sell_update v_dus_hrgjual_retail_update"
+                            <input type="text" class="form-control FormatKey onlyNumber text-right sell_update v_dus_hrgjual_retail_update"
                                 data-category="dus" placeholder="0.00" name="v_dus_hrgjual_retail"
                                 aria-describedby="sizing-addon2" maxlength="10"
                                 value="<?php echo number_format($dataBarang->dus_hrgjual_retail); ?>">
@@ -163,7 +163,7 @@
                                 <!-- <i class="glyphicon glyphicon-tags"></i> -->
                                 PCS
                             </span>
-                            <input type="text" class="form-control onlyNumber text-right sell_update v_pcs_hrgjual_grosir_update"
+                            <input type="text" class="form-control FormatKey onlyNumber text-right sell_update v_pcs_hrgjual_grosir_update"
                                 data-category="pcs" placeholder="0.00" name="v_pcs_hrgjual_grosir"
                                 aria-describedby="sizing-addon2" maxlength="10"
                                 value="<?php echo number_format($dataBarang->pcs_hrgjual_grosir); ?>">
@@ -174,7 +174,7 @@
                                 <!-- <i class="glyphicon glyphicon-tags"></i> -->
                                 RENTENG
                             </span>
-                            <input type="text" class="form-control onlyNumber text-right sell_update v_renteng_hrgjual_grosir_update"
+                            <input type="text" class="form-control FormatKey onlyNumber text-right sell_update v_renteng_hrgjual_grosir_update"
                                 data-category="renteng" placeholder="0.00" name="v_renteng_hrgjual_grosir"
                                 aria-describedby="sizing-addon2" maxlength="10"
                                 value="<?php echo number_format($dataBarang->renteng_hrgjual_grosir); ?>">
@@ -185,7 +185,7 @@
                                 <!-- <i class="glyphicon glyphicon-tags"></i> -->
                                 PAK
                             </span>
-                            <input type="text" class="form-control onlyNumber text-right sell_update v_pax_hrgjual_grosir_update"
+                            <input type="text" class="form-control FormatKey onlyNumber text-right sell_update v_pax_hrgjual_grosir_update"
                                 data-category="pax" placeholder="0.00" name="v_pax_hrgjual_grosir"
                                 aria-describedby="sizing-addon2" maxlength="10"
                                 value="<?php echo number_format($dataBarang->pax_hrgjual_grosir); ?>">
@@ -196,7 +196,7 @@
                                 <!-- <i class="glyphicon glyphicon-tags"></i> -->
                                 DUS
                             </span>
-                            <input type="text" class="form-control onlyNumber text-right sell_update v_dus_hrgjual_grosir_update"
+                            <input type="text" class="form-control FormatKey onlyNumber text-right sell_update v_dus_hrgjual_grosir_update"
                                 data-category="dus" placeholder="0.00" name="v_dus_hrgjual_grosir"
                                 aria-describedby="sizing-addon2" maxlength="10"
                                 value="<?php echo number_format($dataBarang->dus_hrgjual_grosir); ?>">
