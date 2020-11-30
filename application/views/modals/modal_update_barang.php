@@ -230,53 +230,53 @@
   $(document).ready(function () {
     masking();
 
-    $(document).on('change', '.v_hargabeli_pcs_update', function (event) {
-      event.preventDefault();
-      var arrObj = [
-        'v_pcs_hrgjual_retail_update',
-        'v_pcs_hrgjual_grosir_update'
-      ];
+    // $(document).on('change', '.v_hargabeli_pcs_update', function (event) {
+    //   event.preventDefault();
+    //   var arrObj = [
+    //     'v_pcs_hrgjual_retail_update',
+    //     'v_pcs_hrgjual_grosir_update'
+    //   ];
 
-      arrObj.forEach((item) => {
-        $(`.${item}`).val('')
-      })
-    })
+    //   arrObj.forEach((item) => {
+    //     $(`.${item}`).val('')
+    //   })
+    // })
 
-    $(document).on('change', '.v_hargabeli_pax_update', function (event) {
-      event.preventDefault();
-      var arrObj = [
-        'v_pax_hrgjual_retail_update',
-        'v_pax_hrgjual_grosir_update'
-      ];
+    // $(document).on('change', '.v_hargabeli_pax_update', function (event) {
+    //   event.preventDefault();
+    //   var arrObj = [
+    //     'v_pax_hrgjual_retail_update',
+    //     'v_pax_hrgjual_grosir_update'
+    //   ];
 
-      arrObj.forEach((item) => {
-        $(`.${item}`).val('')
-      })
-    })
+    //   arrObj.forEach((item) => {
+    //     $(`.${item}`).val('')
+    //   })
+    // })
 
-    $(document).on('change', '.v_hargabeli_renteng_update', function(event){
-        event.preventDefault();
-        var arrObj = [
-          'v_renteng_hrgjual_retail_update',
-          'v_renteng_hrgjual_grosir_update',
-        ];
+    // $(document).on('change', '.v_hargabeli_renteng_update', function(event){
+    //     event.preventDefault();
+    //     var arrObj = [
+    //       'v_renteng_hrgjual_retail_update',
+    //       'v_renteng_hrgjual_grosir_update',
+    //     ];
 
-        arrObj.forEach((item) => {
-          $(`.${item}`).val('')
-        })
-    })
+    //     arrObj.forEach((item) => {
+    //       $(`.${item}`).val('')
+    //     })
+    // })
 
-    $(document).on('change', '.v_hargabeli_dus_update', function (event) {
-      event.preventDefault();
-      var arrObj = [
-        'v_dus_hrgjual_retail_update',
-        'v_dus_hrgjual_grosir_update'
-      ];
+    // $(document).on('change', '.v_hargabeli_dus_update', function (event) {
+    //   event.preventDefault();
+    //   var arrObj = [
+    //     'v_dus_hrgjual_retail_update',
+    //     'v_dus_hrgjual_grosir_update'
+    //   ];
 
-      arrObj.forEach((item) => {
-        $(`.${item}`).val('')
-      })
-    })
+    //   arrObj.forEach((item) => {
+    //     $(`.${item}`).val('')
+    //   })
+    // })
 
     $(document).on('change', '.sell_update', function (event) {
       event.preventDefault();
@@ -291,11 +291,12 @@
 
     if (buy == 0 || buy.length == 0) {
       myAlert('error', `Harga jual ${isCategory} tidak boleh lebih kecil dari 0`)
-      $(param).val('')
-    } else {
+    //   $(param).val('')
+    } 
+    else {
       if (sell < buy) {
         myAlert('error', `Harga jual ${isCategory} tidak boleh lebih kecil dari harga beli ${isCategory}`)
-        $(param).val('')
+        // $(param).val('')
       }
     }
   }

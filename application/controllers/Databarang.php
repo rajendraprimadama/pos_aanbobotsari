@@ -43,14 +43,32 @@ class Databarang extends AUTH_Controller {
 				$out['status'] = '';
 				$out['msg'] = show_err_msg('Data Barang sudah ada', '15px');
 			} else {
-				$result = $this->M_dbrg->insert($data);
 
-				if ($result > 0) {
+				if(((float) $data['v_hrgbeli_pcs'] > (float) $data['v_pcs_hrgjual_retail']) || ((float) $data['v_hrgbeli_pcs'] > (float) $data['v_pcs_hrgjual_grosir'])){
 					$out['status'] = '';
-					$out['msg'] = show_succ_msg('Data Barang Berhasil ditambahkan', '15px');
-				} else {
+					$out['msg'] = show_err_msg('Harga Jual PCS harus lebih besar dari harga beli', '15px');
+				}
+				else if(($data['v_hrgbeli_pax'] > $data['v_pax_hrgjual_retail']) || ($data['v_hrgbeli_pax'] > $data['v_pax_hrgjual_grosir'])){
 					$out['status'] = '';
-					$out['msg'] = show_err_msg('Data Barang Gagal ditambahkan', '15px');
+					$out['msg'] = show_err_msg('Harga Jual PAK harus lebih besar dari harga beli', '15px');
+				}
+				else if(($data['v_hrgbeli_renteng'] > $data['v_renteng_hrgjual_retail']) || ($data['v_hrgbeli_renteng'] > $data['v_renteng_hrgjual_grosir'])){
+					$out['status'] = '';
+					$out['msg'] = show_err_msg('Harga Jual RENTENG harus lebih besar dari harga beli', '15px');
+				}
+				else if(($data['v_hrgbeli_dus'] > $data['v_dus_hrgjual_retail']) || ($data['v_hrgbeli_dus'] > $data['v_dus_hrgjual_grosir'])){
+					$out['status'] = '';
+					$out['msg'] = show_err_msg('Harga Jual DUS harus lebih besar dari harga beli', '15px');
+				}
+				else {
+					$result = $this->M_dbrg->insert($data);
+					if ($result > 0) {
+						$out['status'] = '';
+						$out['msg'] = show_succ_msg('Data Barang Berhasil ditambahkan', '15px');
+					} else {
+						$out['status'] = '';
+						$out['msg'] = show_err_msg('Data Barang Gagal ditambahkan', '15px');
+					}
 				}
 			}
 			
@@ -81,14 +99,33 @@ class Databarang extends AUTH_Controller {
 
 		$data 	= $this->input->post();
 		if ($this->form_validation->run() == TRUE) {
-			$result = $this->M_dbrg->update($data);
 
-			if ($result > 0) {
+			if(((float) $data['v_hrgbeli_pcs'] > (float) $data['v_pcs_hrgjual_retail']) || ((float) $data['v_hrgbeli_pcs'] > (float) $data['v_pcs_hrgjual_grosir'])){
 				$out['status'] = '';
-				$out['msg'] = show_succ_msg('Data Barang Berhasil diupdate', '15px');
-			} else {
+				$out['msg'] = show_err_msg('Harga Jual PCS harus lebih besar dari harga beli', '15px');
+			}
+			else if(($data['v_hrgbeli_pax'] > $data['v_pax_hrgjual_retail']) || ($data['v_hrgbeli_pax'] > $data['v_pax_hrgjual_grosir'])){
 				$out['status'] = '';
-				$out['msg'] = show_succ_msg('Data Barang Gagal diupdate', '15px');
+				$out['msg'] = show_err_msg('Harga Jual PAK harus lebih besar dari harga beli', '15px');
+			}
+			else if(($data['v_hrgbeli_renteng'] > $data['v_renteng_hrgjual_retail']) || ($data['v_hrgbeli_renteng'] > $data['v_renteng_hrgjual_grosir'])){
+				$out['status'] = '';
+				$out['msg'] = show_err_msg('Harga Jual RENTENG harus lebih besar dari harga beli', '15px');
+			}
+			else if(($data['v_hrgbeli_dus'] > $data['v_dus_hrgjual_retail']) || ($data['v_hrgbeli_dus'] > $data['v_dus_hrgjual_grosir'])){
+				$out['status'] = '';
+				$out['msg'] = show_err_msg('Harga Jual DUS harus lebih besar dari harga beli', '15px');
+			}
+			else{
+				$result = $this->M_dbrg->update($data);
+
+				if ($result > 0) {
+					$out['status'] = '';
+					$out['msg'] = show_succ_msg('Data Barang Berhasil diupdate', '15px');
+				} else {
+					$out['status'] = '';
+					$out['msg'] = show_succ_msg('Data Barang Gagal diupdate', '15px');
+				}
 			}
 		} else {
 			$out['status'] = 'form';
