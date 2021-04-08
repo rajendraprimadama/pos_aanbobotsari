@@ -117,7 +117,7 @@ $b=$datatransaksi->row_array();
                     $diskon=$i['d_jual_diskon'];
                     $total=$i['d_jual_total'];
                     ?>
-                    <tr>
+                    <tr style="border-top: 1px dashed black">
                         <td class="description"><?php echo $nabar;?></td>
                         <td class="quantity"><?php echo $qty;?></td>
                         <td class="satuan"><?php echo $satuan;?></td>
