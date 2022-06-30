@@ -8,19 +8,19 @@
 		  "autoWidth": false
 		});
 
-	window.onload = function() {
+	// window.onload = function() {
 		
-		tampilBarang();
-		// tampilSupplier();
-		// tampilCustomer();
-		tampilKategori();
-		tampilKaryawan();
-		<?php
-			if ($this->session->flashdata('msg') != '') {
-				echo "effect_msg();";
-			}
-		?>
-	}
+	// 	// tampilBarang();
+	// 	// tampilSupplier();
+	// 	// tampilCustomer();
+	// 	// tampilKategori();
+	// 	// tampilKaryawan();
+	// 	<?php
+	// 		if ($this->session->flashdata('msg') != '') {
+	// 			echo "effect_msg();";
+	// 		}
+	// 	?>
+	// }
 
 	function myLoad(mode, param){
 		if(mode == 'start'){
@@ -58,11 +58,26 @@
 //fungsi DATA BARANG
 	//FUNGSI TAMPIL
 	function tampilBarang() {
-		$.get('<?php echo base_url('Databarang/tampil'); ?>', function(data) {
+		// $.get('<?php echo base_url('Databarang/tampil'); ?>', function(data) {
+		// 	MyTable.fnDestroy();
+		// 	$('#data-barang').html(data);
+		// 	refresh();
+		// });
+
+		$.ajax({
+			method: "GET",
+			url: "<?php echo base_url('Databarang/tampil'); ?>",
+			data: {},
+			beforeSend: function(){
+                myLoad('start','#data-barang');
+			}
+		})
+		.done(function(data) {
+			myLoad('end','#data-barang');
 			MyTable.fnDestroy();
 			$('#data-barang').html(data);
-			refresh();
-		});
+			refresh();;
+		})
 	}
 
 	//DELETE BARANG

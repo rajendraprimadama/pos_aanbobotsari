@@ -10,7 +10,7 @@ class Databarang extends AUTH_Controller {
 
 	public function index() {
 		$data['userdata'] 	= $this->userdata;
-		$data['dataBarang'] = $this->M_dbrg->select_all();
+		// $data['dataBarang'] = $this->M_dbrg->select_all();
 		$data['dataKategori'] = $this->M_kategori->select_all();
  		
 		$data['page'] 		= "Databarang";
@@ -171,6 +171,23 @@ class Databarang extends AUTH_Controller {
         }
 
         return $hasil;
+	}
+
+	public function backup_sql()
+	{
+		$this->load->dbutil(); 
+		$conf = [ 
+			'format' => 'zip', 
+			'filename' => 'backup_db.sql'
+		];
+
+		$backup = $this->dbutil->backup($conf); 
+		$db_name = 'backup_db_' . date("d-m-Y_H-i-s") . '.zip'; 
+		$save = APPPATH . 'database_backup/' . $db_name; 
+		$this->load->helper('file'); 
+		write_file($save, $backup); 
+		$this->load->helper('download'); 
+		force_download($db_name, $backup); 
 	}
 }
 /* End of file Posisi.php */

@@ -40,3 +40,16 @@
   $data['url'] = 'Posisi/import';
   echo show_my_modal('modals/modal_import', 'import-posisi', $data);
 ?>
+
+<script type="text/javascript">
+
+	window.onload = function() {
+		
+		tampilKaryawan();
+		<?php
+			if ($this->session->flashdata('msg') != '') {
+				echo "effect_msg();";
+			}
+		?>
+	}
+</script>
