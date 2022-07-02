@@ -64,20 +64,40 @@
 		// 	refresh();
 		// });
 
-		$.ajax({
-			method: "GET",
-			url: "<?php echo base_url('Databarang/tampil'); ?>",
-			data: {},
-			beforeSend: function(){
-                myLoad('start','#data-barang');
-			}
-		})
-		.done(function(data) {
-			myLoad('end','#data-barang');
-			MyTable.fnDestroy();
-			$('#data-barang').html(data);
-			refresh();;
-		})
+		// $.ajax({
+		// 	method: "GET",
+		// 	url: "<?php echo base_url('Databarang/tampil'); ?>",
+		// 	data: {},
+		// 	beforeSend: function(){
+        //         myLoad('start','#data-barang');
+		// 	}
+		// })
+		// .done(function(data) {
+		// 	myLoad('end','#data-barang');
+		// 	MyTable.fnDestroy();
+		// 	$('#data-barang').html(data);
+		// 	refresh();;
+		// })
+
+		// datatables
+        var table = $('#data-barang').dataTable({ 
+ 
+				"processing": true, 
+				"serverSide": true, 
+				"order": [], 
+				
+				"ajax": {
+					"url": "<?php echo site_url('databarang/get_data_user')?>",
+					"type": "POST"
+				},
+				"columnDefs": [
+				{ 
+					"targets": [ 0 ], 
+					"orderable": false, 
+				},
+				],
+
+				});
 	}
 
 	//DELETE BARANG

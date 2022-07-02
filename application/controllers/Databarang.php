@@ -28,6 +28,71 @@ class Databarang extends AUTH_Controller {
 		$this->load->view('databarang/list_data', $data);
 	}
 
+	public function get_data_user()
+	{
+		$list = $this->M_dbrg->get_datatables();
+		$data = array();
+
+		// print_r('<pre>');
+		// print_r($list);
+		// print_r('</pre>');
+		// exit;
+
+		$no = $_POST['start'] + 1;
+		foreach ($list as $field) {
+			$row = array();
+			$row[] = $no;
+			// $row[] = $field->id;
+			// $row[] = $field->id_brg;
+			$row[] = $field->barcode_brg;
+			$row[] = $field->nama_brg;
+			$row[] = $field->hrg_beli_pcs;
+			$row[] = $field->hrg_beli_renteng;
+			$row[] = $field->hrg_beli_pax;
+			$row[] = $field->hrg_beli_dus;
+			$row[] = $field->pcs_hrgjual_retail;
+			$row[] = $field->renteng_hrgjual_retail;
+			$row[] = $field->pax_hrgjual_retail;
+			$row[] = $field->dus_hrgjual_retail;
+			$row[] = $field->pcs_hrgjual_grosir;
+			$row[] = $field->renteng_hrgjual_grosir;
+			$row[] = $field->pax_hrgjual_grosir;
+			$row[] = $field->dus_hrgjual_grosir;
+			$row[] = $field->keterangan;
+			$row[] = '<div class="btn-group" role="group" aria-label="...">
+			<div class="btn-group" role="group">
+			  <button type="button" class="btn btn-danger btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<i class="glyphicon glyphicon-cog"></i>
+				<span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu">
+				<li><a class="dropdown-item update-dataBarang" data-id="'.$field->id.'"><i class="glyphicon glyphicon-repeat text-info"></i> Update</a></li>
+				<li role="separator" class="divider"></li>
+				<li><a class="dropdown-item konfirmasiHapus-barang" data-id="'.$field->id.'" data-toggle="modal" data-target="#konfirmasiHapus"><i class="glyphicon glyphicon-remove-sign text-danger"></i> Delete</a></li>
+			  </ul>
+			</div>
+		  </div>';
+			
+			$data[] = $row;
+
+			$no++;
+		}
+
+		$output = array(
+			"draw" => $_POST['draw'],
+			"recordsTotal" => $this->M_dbrg->count_all(),
+			"recordsFiltered" => $this->M_dbrg->count_filtered(),
+			"data" => $data,
+		);
+
+		// print_r('<pre>');
+		// print_r($output);
+		// print_r('</pre>');
+		// exit;
+		echo json_encode($output);
+
+	}	
+
 	public function prosesTambah() {
 		//'variable modal','dimunculkan di tampilan validasi','required'
 		$this->form_validation->set_rules('v_namabrg', 'Nama Barang', 'trim|required');

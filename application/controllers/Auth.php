@@ -37,9 +37,42 @@ class Auth extends CI_Controller {
 				];
 				$this->session->set_userdata($session);
 
+				# check to reset data transaksi
+
+				if(in_array(date('d'), ['1', '15'])) 
+				{
+					$is_tgl = date('Y-m-d');
+					$check = $this->db->query('select * from log_delete_transaksi where DATE(created_date) = "'.$is_tgl.'"');
+	
+					// if (count($check->result()) <= 0) {
+					if (count($check->result()) <= 0) {
+	
+						# select data
+						$transaksi = $this->db->query('select * from data_jual where DATE(jual_tanggal) = "'.$is_tgl.'"')->result();
+	
+						$first = reset($transaksi);
+						$last = end($transaksi);
+	
+						# insert into log
+						$sql = "INSERT INTO log_delete_transaksi 
+								(id_transaksi_mulai, id_transaksi_selesai, created_at) 
+								VALUES(
+								'" .$first->jual_nofak."',
+								'" .$last->jual_nofak."',	
+								'" .$data->id."'
+								)";
+	
+						$this->db->query($sql);
+	
+						# delete
+						$this->db->query('delete from log_delete_transaksi where DATE(created_date) < CURDATE()');
+					}
+				}
+
 				if($data->authority_level == "KASIR") {
 					redirect('Datatransaksi');
-				}else {
+				}
+				else {
 					redirect('Databarang');
 				}
 			}

@@ -6,7 +6,7 @@
       <td class="text-center"><?php echo $no; ?></td>
       <td class="text-center"><?php echo $data_barang->barcode_brg; ?></td>
       <td class="text-left"><?php echo $data_barang->nama_brg; ?></td>
-      <td class="text-left"><?php echo $data_barang->kategori; ?></td>
+      <!-- <td class="text-left"><?php echo $data_barang->kategori; ?></td> -->
       <td class="text-center"><?php echo $data_barang->hrg_beli_pcs; ?></td>
       <td class="text-center"><?php echo $data_barang->hrg_beli_renteng; ?></td>
       <td class="text-center"><?php echo $data_barang->hrg_beli_pax; ?></td>

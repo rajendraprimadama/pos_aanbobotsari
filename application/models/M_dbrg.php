@@ -2,9 +2,90 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_dbrg extends CI_Model {
+	var $table = 'data_barang'; //nama tabel dari database
+    var $column_order = array(null, 'id_brg','barcode_brg','nama_brg','kategori',
+	'hrg_beli_pcs','hrg_beli_renteng','hrg_beli_pax','hrg_beli_dus',
+	'pcs_hrgjual_retail','renteng_hrgjual_retail','pax_hrgjual_retail','dus_hrgjual_retail',
+	'pcs_hrgjual_grosir','renteng_hrgjual_grosir','pax_hrgjual_grosir','dus_hrgjual_grosir','keterangan'); //field yang ada di table user
+    var $column_search = array('barcode_brg','nama_brg','kategori'); //field yang diizin untuk pencarian 
+    var $order = array('id_brg' => 'desc'); // default order
+
+	public function __construct()
+    {
+        parent::__construct();
+        $this->load->database();
+    }
+
+	private function _get_datatables_query()
+    {
+         
+        $this->db->from($this->table);
+ 
+        $i = 0;
+     
+        foreach ($this->column_search as $item) // looping awal
+        {
+            if($_POST['search']['value']) // jika datatable mengirimkan pencarian dengan metode POST
+            {
+                 
+                if($i===0) // looping awal
+                {
+                    $this->db->group_start(); 
+                    $this->db->like($item, $_POST['search']['value']);
+                }
+                else
+                {
+                    $this->db->or_like($item, $_POST['search']['value']);
+                }
+ 
+                if(count($this->column_search) - 1 == $i) 
+                    $this->db->group_end(); 
+            }
+            $i++;
+        }
+         
+        if(isset($_POST['order'])) 
+        {
+            $this->db->order_by($this->column_order[$_POST['order']['0']['column']], $_POST['order']['0']['dir']);
+        } 
+        else if(isset($this->order))
+        {
+            $order = $this->order;
+            $this->db->order_by(key($order), $order[key($order)]);
+        }
+    }
+ 
+    function get_datatables()
+    {
+        $this->_get_datatables_query();
+        if($_POST['length'] != -1)
+        $this->db->limit($_POST['length'], $_POST['start']);
+        $query = $this->db->get();
+        return $query->result();
+    }
+ 
+    function count_filtered()
+    {
+        $this->_get_datatables_query();
+        $query = $this->db->get();
+        return $query->num_rows();
+    }
+ 
+    public function count_all()
+    {
+        $this->db->from($this->table);
+        return $this->db->count_all_results();
+    }
+
+
+
+
+
+	# region old
 	public function select_all() {
 		// $data = $this->db->get('data_barang'); //merujuk database
-		$sql = "SELECT data_barang.*, data_kategori.kategori AS kategori FROM data_barang INNER JOIN data_kategori on data_barang.kategori = data_kategori.id ORDER BY id DESC, data_barang.kategori ASC";
+		// $sql = "SELECT data_barang.*, data_kategori.kategori AS kategori FROM data_barang INNER JOIN data_kategori on data_barang.kategori = data_kategori.id ORDER BY id DESC";
+		$sql = "SELECT * FROM data_barang ORDER BY id DESC LIMIT 1000";
 		$data = $this->db->query($sql);
 
 		return $data->result();
