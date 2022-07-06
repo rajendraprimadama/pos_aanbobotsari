@@ -11,13 +11,13 @@
   </div>
   <!-- /.box-header -->
   <div class="box-body table-responsive">
-    <table id="data-barang" class="table table-bordered table-xs table-hover table-striped" style="width:100%">
+    <table id="list-data" class="table table-bordered table-xs table-hover table-striped" style="width:100%">
       <thead>
         <tr class="text-uppercase">
           <th class="text-center" width="1%" rowspan="2">No</th>
           <th class="text-center" rowspan="2">Kode Barcode</th>
           <th class="text-center" rowspan="2">Nama Barang</th>
-          <!-- <th class="text-center" rowspan="2">Kategori</th> -->
+          <th class="text-center" rowspan="2">Kategori</th>
           <th class="text-center" colspan="4">Harga Beli</th>
 
           <th class="text-center" colspan="4">Harga Jual retail</th>
@@ -44,7 +44,7 @@
         </tr>
       </thead>
       <!-- isi tabel merujuk pada asset/js/ajax.php dengan id data-barang-->
-      <tbody>
+      <tbody id="data-barang">
 
       </tbody>
     </table>

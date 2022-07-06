@@ -84,8 +84,8 @@ class M_dbrg extends CI_Model {
 	# region old
 	public function select_all() {
 		// $data = $this->db->get('data_barang'); //merujuk database
-		// $sql = "SELECT data_barang.*, data_kategori.kategori AS kategori FROM data_barang INNER JOIN data_kategori on data_barang.kategori = data_kategori.id ORDER BY id DESC";
-		$sql = "SELECT * FROM data_barang ORDER BY id DESC LIMIT 1000";
+		$sql = "SELECT data_barang.*, data_kategori.kategori AS kategori FROM data_barang INNER JOIN data_kategori on data_barang.kategori = data_kategori.id ORDER BY id DESC";
+		// $sql = "SELECT * FROM data_barang ORDER BY id DESC LIMIT 1000";
 		$data = $this->db->query($sql);
 
 		return $data->result();
