@@ -8,7 +8,7 @@ class M_dbrg extends CI_Model {
 	'pcs_hrgjual_retail','renteng_hrgjual_retail','pax_hrgjual_retail','dus_hrgjual_retail',
 	'pcs_hrgjual_grosir','renteng_hrgjual_grosir','pax_hrgjual_grosir','dus_hrgjual_grosir','keterangan'); //field yang ada di table user
     var $column_search = array('barcode_brg','nama_brg','kategori'); //field yang diizin untuk pencarian 
-    var $order = array('id_brg' => 'desc'); // default order
+    var $order = array('id' => 'desc'); // default order
 
 	public function __construct()
     {

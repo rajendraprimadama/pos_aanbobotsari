@@ -84,6 +84,7 @@
  
 				"processing": true, 
 				"serverSide": true, 
+				"bDestroy": true,
 				"order": [], 
 				
 				"ajax": {
