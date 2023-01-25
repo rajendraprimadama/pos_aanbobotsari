@@ -16,7 +16,7 @@
     <?php 
     $isTotal = 0;
     if(count($this->cart->contents())*1>0):
-    foreach ($this->cart->contents() as $items): 
+    foreach (array_reverse($this->cart->contents()) as $items): 
         if($items['category'] == 'grosir'):
         echo form_hidden($i.'[rowid]', $items['rowid']); ?>
         <tr>

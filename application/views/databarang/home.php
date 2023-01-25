@@ -13,7 +13,7 @@
   <div class="box-body table-responsive">
     <table id="list-data" class="table table-bordered table-xs table-hover table-striped" style="width:100%">
       <thead>
-        <tr class="text-uppercase">
+        <tr class="text-uppercase bg-primary">
           <th class="text-center" width="1%" rowspan="2">No</th>
           <th class="text-center" rowspan="2">Kode Barcode</th>
           <th class="text-center" rowspan="2">Nama Barang</th>
@@ -26,7 +26,7 @@
           <th class="text-center" rowspan="2" maxwidth="25%">Keterangan</th>
           <th class="text-center" width="5%" rowspan="2">Aksi</th>
         </tr>
-        <tr class="text-uppercase">
+        <tr class="text-uppercase bg-primary">
           <th class="text-center">pcs</th>
           <th class="text-center">renteng</th>
           <th class="text-center">pak</th>

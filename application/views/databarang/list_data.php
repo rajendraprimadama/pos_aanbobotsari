@@ -3,23 +3,23 @@
   foreach ($dataBarang as $data_barang) {
     ?>
     <tr>
-      <td class="text-center"><?php echo $no; ?></td>
-      <td class="text-center"><?php echo $data_barang->barcode_brg; ?></td>
-      <td class="text-left"><?php echo $data_barang->nama_brg; ?></td>
-      <td class="text-left"><?php echo $data_barang->kategori; ?></td>
-      <td class="text-center"><?php echo $data_barang->hrg_beli_pcs; ?></td>
-      <td class="text-center"><?php echo $data_barang->hrg_beli_renteng; ?></td>
-      <td class="text-center"><?php echo $data_barang->hrg_beli_pax; ?></td>
-      <td class="text-center"><?php echo $data_barang->hrg_beli_dus; ?></td>
-      <td class="text-center"><?php echo $data_barang->pcs_hrgjual_retail; ?></td>
-      <td class="text-center"><?php echo $data_barang->renteng_hrgjual_retail; ?></td>
-      <td class="text-center"><?php echo $data_barang->pax_hrgjual_retail; ?></td>
-      <td class="text-center"><?php echo $data_barang->dus_hrgjual_retail; ?></td>
-      <td class="text-center"><?php echo $data_barang->pcs_hrgjual_grosir; ?></td>
-      <td class="text-center"><?php echo $data_barang->renteng_hrgjual_grosir; ?></td>
-      <td class="text-center"><?php echo $data_barang->pax_hrgjual_grosir; ?></td>
-      <td class="text-center"><?php echo $data_barang->dus_hrgjual_grosir; ?></td>
-      <td><?php echo $data_barang->keterangan; ?></td>
+      <td class="text-center"><strong><?php echo $no; ?></strong></td>
+      <td class="text-center"><strong><?php echo $data_barang->barcode_brg; ?></strong></td>
+      <td class="text-left"><strong><?php echo $data_barang->nama_brg; ?></strong></td>
+      <td class="text-left"><strong><?php echo $data_barang->kategori; ?></strong></td>
+      <td class="text-center"><strong><?php echo $data_barang->hrg_beli_pcs; ?></strong></td>
+      <td class="text-center"><strong><?php echo $data_barang->hrg_beli_renteng; ?></strong></td>
+      <td class="text-center"><strong><?php echo $data_barang->hrg_beli_pax; ?></strong></td>
+      <td class="text-center"><strong><?php echo $data_barang->hrg_beli_dus; ?></strong></td>
+      <td class="text-center"><strong><?php echo $data_barang->pcs_hrgjual_retail; ?></strong></td>
+      <td class="text-center"><strong><?php echo $data_barang->renteng_hrgjual_retail; ?></strong></td>
+      <td class="text-center"><strong><?php echo $data_barang->pax_hrgjual_retail; ?></strong></td>
+      <td class="text-center"><strong><?php echo $data_barang->dus_hrgjual_retail; ?></strong></td>
+      <td class="text-center"><strong><?php echo $data_barang->pcs_hrgjual_grosir; ?></strong></td>
+      <td class="text-center"><strong><?php echo $data_barang->renteng_hrgjual_grosir; ?></strong></td>
+      <td class="text-center"><strong><?php echo $data_barang->pax_hrgjual_grosir; ?></strong></td>
+      <td class="text-center"><strong><?php echo $data_barang->dus_hrgjual_grosir; ?></strong></td>
+      <td><strong><?php echo $data_barang->keterangan; ?></strong></td>
       <td class="text-center">
         <div class="btn-group" role="group" aria-label="...">
           <div class="btn-group" role="group">
