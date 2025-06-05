@@ -140,10 +140,30 @@ $b=$datatransaksi->row_array();
                     <th class="price"></th>
                 </tr>
                 <tr class="total">
-                    <td class="description"><b>Total</b></td>
+                    <td class="description"><b>Sub Total</b></td>
                     <td class="quantity"></td>
                     <td class="satuan"></td>
                     <td class="price"><b><?php echo number_format($b['jual_total']);?></b></td>
+                </tr>
+                <tr class="total">
+                    <td class="description"><b>Diskon</b></td>
+                    <td class="quantity"></td>
+                    <td class="satuan"></td>
+                    <td class="price"><b><?php echo number_format($b['jml_diskon']);?></b></td>
+                </tr>
+                <tr class="total">
+                    <td class="description"><b>Packing</b></td>
+                    <td class="quantity"></td>
+                    <td class="satuan"></td>
+                    <td class="price"><b><?php echo number_format($b['jml_hrga_packing']);?></b></td>
+                </tr>
+
+                <tr style="border-top: 1px dashed black"><td colspan="100%"></td></tr>
+                <tr>
+                    <td class="description"><b>Total Harga</b></td>
+                    <td class="quantity"></td>
+                    <td class="satuan"></td>
+                    <td class="price"><b><?php echo number_format($b['jual_total'] - $b['jml_diskon'] + $b['jml_hrga_packing']);?></b></td>
                 </tr>
                 <tr>
                     <td class="description"><b>Bayar</b></td>

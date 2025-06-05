@@ -16,13 +16,13 @@ class M_penjualan extends CI_Model{
 		return $hsl;
 	}
 
-	function simpan_penjualan($nofak,$total,$jml_uang,$kembalian,$category){
+	function simpan_penjualan($nofak, $total, $jml_uang, $kembalian, $category, $diskon, $packing){
 		$idadmin = $this->userdata->nama;
 		
 		$this->db->query(
 			"INSERT INTO data_jual 
-			(jual_nofak,jual_total,jual_jml_uang,jual_kembalian,jual_user_id,jual_keterangan) 
-			VALUES ('$nofak','$total','$jml_uang','$kembalian','$idadmin','$category')
+			(jual_nofak, jual_total, jual_jml_uang, jual_kembalian, jual_user_id, jual_keterangan, jml_diskon, jml_hrga_packing) 
+			VALUES ('$nofak','$total','$jml_uang','$kembalian','$idadmin','$category', '$diskon', '$packing')
 			");
 
 		$isModal = 0;
@@ -43,7 +43,9 @@ class M_penjualan extends CI_Model{
 				$this->db->insert('data_detail_jual',$data);
 			}
 		}
-		$keuntungan = $total - $isModal;
+		$keuntungan = ($total - $diskon + $packing) - $isModal;
+		// var_dump($keuntungan);
+		// die();
 
 		#update header
 		$this->db->query(
@@ -97,7 +99,8 @@ class M_penjualan extends CI_Model{
 				jual_jml_uang,
 				jual_kembalian,
 				jual_keterangan,
-
+				jml_diskon,
+				jml_hrga_packing,
 				d_jual_barang_nama,
 				d_jual_barang_satuan,
 				d_jual_barang_harjul,

@@ -107,8 +107,10 @@ class Datatransaksi extends AUTH_Controller {
 	function simpan_penjualan(){
 		$category = $this->input->post('category');
 		$total = str_replace(",", "",$this->input->post('v_total_bayar_'.$category));
+		$diskon = str_replace(",", "",$this->input->post('v_jml_diskon_'.$category));
+		$packing = str_replace(",", "",$this->input->post('v_jml_packing_'.$category));
 		$jml_uang = str_replace(",", "", $this->input->post('v_jml_bayar_'.$category));
-		$kembalian = (float)$jml_uang - (float)$total;
+		$kembalian = (float)$jml_uang - ((float)$total + (float)$packing - (float)$diskon);
 
 		if(!empty($total) && !empty($jml_uang) && (float)$total > 0 && (float)$jml_uang > 0){
 			if((float)$kembalian < 0){
@@ -119,7 +121,7 @@ class Datatransaksi extends AUTH_Controller {
 
 			}else{
 				$nofak = $this->M_penjualan->get_nofak();
-				$order_proses = $this->M_penjualan->simpan_penjualan($nofak,$total,$jml_uang,$kembalian,$category);
+				$order_proses = $this->M_penjualan->simpan_penjualan($nofak, $total, $jml_uang, $kembalian, $category, $diskon, $packing);
 				$data['datatransaksi'] = $this->M_penjualan->cetak_faktur($nofak);
 				$data['userdata'] = $this->userdata;
 				if($order_proses){

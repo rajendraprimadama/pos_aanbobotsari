@@ -17,8 +17,8 @@
                         <script src="<?php echo base_url(); ?>assets/bootstrap/js/typeahead.min.js"></script>
                         <div class="nav-tabs-custom">
                             <ul class="nav nav-tabs">
-                                <li class="tabKasir active" id="tab1" data-category="retail"><a href="#tab_1" data-toggle="tab">Jual Ecer</a></li>
-                                <li class="tabKasir" id="tab2" data-category="grosir"><a href="#tab_2" data-toggle="tab">Jual Grosir</a></li>
+                                <li class="tabKasir active bg-success" id="tab1" data-category="retail"><a href="#tab_1" data-toggle="tab"><b>Jual Ecer</b></a></li>
+                                <li class="tabKasir" id="tab2" data-category="grosir"><a href="#tab_2" data-toggle="tab"><b>Jual Grosir</b></a></li>
                             </ul>
                             <div class="tab-content" style="padding-top:0px">
                                 <div class="tab-pane tabKasir active" id="tab_1">

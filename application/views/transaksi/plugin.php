@@ -252,9 +252,14 @@
         calculate: (element) => {
             let category = $(element).attr('data-category');
             let jml_belanja = reform($(`#v_total_bayar_${category}`).val());
-            let jml_bayar = reform($(`#v_jml_bayar_${category}`).val());
-            let kembalian = parseFloat(jml_bayar) - parseFloat(jml_belanja);
+            let jml_bayar = reform($(`#v_jml_bayar_${category}`).val() ?? 0);
+            let jml_diskon = reform($(`#v_jml_diskon_${category}`).val());
+            let jml_packing = reform($(`#v_jml_packing_${category}`).val());
+            let kembalian = (isNaN(parseFloat(jml_bayar)) ? 0 : parseFloat(jml_bayar)) - (parseFloat(jml_belanja) - (isNaN(parseFloat(jml_diskon)) ? 0 : parseFloat(jml_diskon)) + (isNaN(parseFloat(jml_packing)) ? 0: parseFloat(jml_packing)));
+            let total_belanja = parseFloat(jml_belanja) - (isNaN(parseFloat(jml_diskon)) ? 0 : parseFloat(jml_diskon)) + (isNaN(parseFloat(jml_packing)) ? 0: parseFloat(jml_packing));
             
+
+            $(`#v_jml_total_${category}`).val(FormatNumber(total_belanja));
             $(`#v_kembalian_${category}`).val(FormatNumber(kembalian));
         },
 

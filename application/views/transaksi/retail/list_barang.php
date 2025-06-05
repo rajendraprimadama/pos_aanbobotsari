@@ -63,13 +63,31 @@
     <input type="hidden" name="category" value="retail">
     <table>
     <tr>
-        <td style="width:760px;" rowspan="2">
+        <td style="width:760px;" rowspan="6">
             <button style="width:30%" type="submit" class="btn btn-info btn-lg"> Bayar</button>
             <button style="width:30%" type="button" class="btn btn-danger btn-lg btn-act" data-action="reset" data-category="retail"> Reset</button>
         </td>
-        <th style="width:140px;">Total Belanja(Rp)</th>
+        <th style="width:140px;">Subtotal Belanja(Rp)</th>
         <th style="text-align:right;width:140px;">
-        <input type="text" name="v_total_bayar_retail" id="v_total_bayar_retail" value="<?php echo number_format($isTotal);?>" class="form-control input-sm v_total_bayar_retail" style="text-align:right;margin-bottom:5px;" readonly></th>
+            <input type="text" name="v_total_bayar_retail" id="v_total_bayar_retail" value="<?php echo number_format($isTotal);?>" class="form-control input-sm v_total_bayar_retail" style="text-align:right;margin-bottom:5px;" readonly>
+        </th>
+    </tr>
+    <tr>
+        <th>Packing(Rp)</th>
+        <th style="text-align:right;">
+        <input type="text" id="v_jml_packing_retail" name="v_jml_packing_retail" class="v_jml_packing_retail form-control input-sm FormatKey calculate" data-category="retail" style="text-align:right;margin-bottom:5px;" required></th>
+    </tr>
+    <tr>
+        <th>Diskon(Rp)</th>
+        <th style="text-align:right;">
+        <input type="text" id="v_jml_diskon_retail" name="v_jml_diskon_retail" class="v_jml_diskon_retail form-control input-sm FormatKey calculate" data-category="retail" style="text-align:right;margin-bottom:5px;" required></th>
+    </tr>
+
+    <tr><td colspan="100%">======================================</td></tr>
+    <tr>
+        <th>Total Belanja(Rp)</th>
+        <th style="text-align:right;">
+        <input type="text" id="v_jml_total_retail" name="v_jml_total_retail" class="v_jml_total_retail form-control input-sm" data-category="retail" style="text-align:right;margin-bottom:5px;" readonly required></th>
     </tr>
     <tr>
         <th>Tunai(Rp)</th>
