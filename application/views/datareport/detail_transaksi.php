@@ -29,7 +29,13 @@
   </div>
 
   <hr style="margin-top:0px">
-
+    <div class="text-right" style="margin-bottom: 10px; margin-right: 10px">
+        <a href="<?= base_url('Datatransaksi/print_nota/' . $datatable[0]->NO_Transaksi); ?>" 
+        class="btn btn-primary" 
+        target="_blank">
+            <i class="glyphicon glyphicon-print"></i> Cetak Ulang Nota
+        </a>
+    </div>
   <!-- /.box-header -->
   <div class="box-body" id="page-all-print">
     <!-- <div class="table-responsive bg-white mb-3 " style="height:350px; overflow-y: scroll;"> -->
