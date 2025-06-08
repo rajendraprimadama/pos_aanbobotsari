@@ -74,12 +74,12 @@
     <tr>
         <th>(+) Packing(Rp)</th>
         <th style="text-align:right;">
-        <input type="text" id="v_jml_packing_grosir" name="v_jml_packing_grosir" class="v_jml_packing_grosir form-control input-sm FormatKey calculate" data-category="grosir" style="text-align:right;margin-bottom:5px;" required></th>
+        <input type="text" id="v_jml_packing_grosir" name="v_jml_packing_grosir" class="v_jml_packing_grosir form-control input-sm FormatKey calculate" data-category="grosir" style="text-align:right;margin-bottom:5px;"></th>
     </tr>
     <tr>
         <th>(-) Diskon(Rp)</th>
         <th style="text-align:right;">
-        <input type="text" id="v_jml_diskon_grosir" name="v_jml_diskon_grosir" class="v_jml_diskon_grosir form-control input-sm FormatKey calculate" data-category="grosir" style="text-align:right;margin-bottom:5px;" required></th>
+        <input type="text" id="v_jml_diskon_grosir" name="v_jml_diskon_grosir" class="v_jml_diskon_grosir form-control input-sm FormatKey calculate" data-category="grosir" style="text-align:right;margin-bottom:5px;"></th>
     </tr>
 
     <tr><td colspan="100%">======================================</td></tr>

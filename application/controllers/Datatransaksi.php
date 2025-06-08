@@ -107,8 +107,8 @@ class Datatransaksi extends AUTH_Controller {
 	function simpan_penjualan(){
 		$category = $this->input->post('category');
 		$total = str_replace(",", "",$this->input->post('v_total_bayar_'.$category));
-		$diskon = str_replace(",", "",$this->input->post('v_jml_diskon_'.$category));
-		$packing = str_replace(",", "",$this->input->post('v_jml_packing_'.$category));
+		$diskon = str_replace(",", "", $this->input->post('v_jml_diskon_'.$category) ?: 0);
+		$packing = str_replace(",", "",$this->input->post('v_jml_packing_'.$category) ?: 0);
 		$jml_uang = str_replace(",", "", $this->input->post('v_jml_bayar_'.$category));
 		$kembalian = (float)$jml_uang - ((float)$total + (float)$packing - (float)$diskon);
 
