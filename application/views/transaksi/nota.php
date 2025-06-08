@@ -146,13 +146,13 @@ $b=$datatransaksi->row_array();
                     <td class="price"><b><?php echo number_format($b['jual_total']);?></b></td>
                 </tr>
                 <tr class="total">
-                    <td class="description"><b>Diskon</b></td>
+                    <td class="description"><b>Diskon (-)</b></td>
                     <td class="quantity"></td>
                     <td class="satuan"></td>
                     <td class="price"><b><?php echo number_format($b['jml_diskon']);?></b></td>
                 </tr>
                 <tr class="total">
-                    <td class="description"><b>Packing</b></td>
+                    <td class="description"><b>Packing (+)</b></td>
                     <td class="quantity"></td>
                     <td class="satuan"></td>
                     <td class="price"><b><?php echo number_format($b['jml_hrga_packing']);?></b></td>
