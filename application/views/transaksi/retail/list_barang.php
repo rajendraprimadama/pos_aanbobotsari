@@ -87,7 +87,7 @@
     <tr>
         <th>Total Belanja(Rp)</th>
         <th style="text-align:right;">
-        <input type="text" id="v_jml_total_retail" name="v_jml_total_retail" class="v_jml_total_retail form-control input-sm" data-category="retail" style="text-align:right;margin-bottom:5px;" readonly required></th>
+        <input type="text" id="v_jml_total_retail" name="v_jml_total_retail" value="<?php echo number_format($isTotal);?>" class="v_jml_total_retail form-control input-sm" data-category="retail" style="text-align:right;margin-bottom:5px;" readonly required></th>
     </tr>
     <tr>
         <th>Tunai(Rp)</th>

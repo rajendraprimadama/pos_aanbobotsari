@@ -86,7 +86,7 @@
     <tr>
         <th>Total Belanja(Rp)</th>
         <th style="text-align:right;">
-        <input type="text" id="v_jml_total_grosir" name="v_jml_total_grosir" class="v_jml_total_grosir form-control input-sm" data-category="grosir" style="text-align:right;margin-bottom:5px;" readonly required></th>
+        <input type="text" id="v_jml_total_grosir" name="v_jml_total_grosir" value="<?php echo number_format($isTotal);?>" class="v_jml_total_grosir form-control input-sm" data-category="grosir" style="text-align:right;margin-bottom:5px;" readonly required></th>
     </tr>
     <tr>
         <th>Tunai(Rp)</th>
