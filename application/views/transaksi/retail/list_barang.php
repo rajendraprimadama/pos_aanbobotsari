@@ -73,12 +73,12 @@
         </th>
     </tr>
     <tr>
-        <th>Packing(Rp)</th>
+        <th>(+) Packing(Rp)</th>
         <th style="text-align:right;">
         <input type="text" id="v_jml_packing_retail" name="v_jml_packing_retail" class="v_jml_packing_retail form-control input-sm FormatKey calculate" data-category="retail" style="text-align:right;margin-bottom:5px;" required></th>
     </tr>
     <tr>
-        <th>Diskon(Rp)</th>
+        <th>(-) Diskon(Rp)</th>
         <th style="text-align:right;">
         <input type="text" id="v_jml_diskon_retail" name="v_jml_diskon_retail" class="v_jml_diskon_retail form-control input-sm FormatKey calculate" data-category="retail" style="text-align:right;margin-bottom:5px;" required></th>
     </tr>

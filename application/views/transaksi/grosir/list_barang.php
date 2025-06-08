@@ -72,12 +72,12 @@
         <input type="text" name="v_total_bayar_grosir" id="v_total_bayar_grosir" value="<?php echo number_format($isTotal);?>" class="form-control input-sm v_total_bayar_grosir" style="text-align:right;margin-bottom:5px;" readonly></th>
     </tr>
     <tr>
-        <th>Packing(Rp)</th>
+        <th>(+) Packing(Rp)</th>
         <th style="text-align:right;">
         <input type="text" id="v_jml_packing_grosir" name="v_jml_packing_grosir" class="v_jml_packing_grosir form-control input-sm FormatKey calculate" data-category="grosir" style="text-align:right;margin-bottom:5px;" required></th>
     </tr>
     <tr>
-        <th>Diskon(Rp)</th>
+        <th>(-) Diskon(Rp)</th>
         <th style="text-align:right;">
         <input type="text" id="v_jml_diskon_grosir" name="v_jml_diskon_grosir" class="v_jml_diskon_grosir form-control input-sm FormatKey calculate" data-category="grosir" style="text-align:right;margin-bottom:5px;" required></th>
     </tr>
