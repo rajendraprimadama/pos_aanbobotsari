@@ -63,6 +63,13 @@
           <span>Data Karyawan</span>
         </a>
       </li>
+      
+      <li <?php if ($page == 'Datapelanggan') {echo 'class="active"';} ?>>
+        <a href="<?php echo base_url('Datapelanggan'); ?>">
+          <i class="fa fa-book"></i>
+          <span>Data Pelanggan</span>
+        </a>
+      </li>
 
       <li <?php if ($page == 'Datatransaksi') {echo 'class="active"';} ?>>
         <a href="<?php echo base_url('Datatransaksi'); ?>">

@@ -100,6 +100,14 @@
         <th style="text-align:right;">
         <input type="text" id="v_kembalian_retail" name="v_kembalian_retail" class="form-control input-sm v_kembalian_retail" style="text-align:right;margin-bottom:5px;" readonly required></th>
     </tr>
-
+    <tr>
+        <td></td>
+        <th>Pilih Pelanggan</th>
+        <th style="text-align:right;">
+            <select class="form-control form-control-sm select2-search v_pelanggan_retail" id="v_pelanggan_retail" name="v_pelanggan_retail" data-category="retail" style="width:100%x;">
+                <option value='' disabled selected>-- Select --</option>
+            </select>
+        </th>
+    </tr>
     </table>
 </form>

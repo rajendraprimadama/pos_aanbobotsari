@@ -7,6 +7,7 @@ class Datatransaksi extends AUTH_Controller {
 		$this->load->model('M_dtransaksi');
 		$this->load->model('M_barang');
 		$this->load->model('M_penjualan');
+		$this->load->model('M_pelanggan');
 	}
 
 	public function index() {
@@ -111,6 +112,7 @@ class Datatransaksi extends AUTH_Controller {
 		$packing = str_replace(",", "",$this->input->post('v_jml_packing_'.$category) ?: 0);
 		$jml_uang = str_replace(",", "", $this->input->post('v_jml_bayar_'.$category));
 		$kembalian = (float)$jml_uang - ((float)$total + (float)$packing - (float)$diskon);
+		$pelanggan = $this->input->post('v_pelanggan_'.$category);
 
 		if(!empty($total) && !empty($jml_uang) && (float)$total > 0 && (float)$jml_uang > 0){
 			if((float)$kembalian < 0){
@@ -121,7 +123,13 @@ class Datatransaksi extends AUTH_Controller {
 
 			}else{
 				$nofak = $this->M_penjualan->get_nofak();
-				$order_proses = $this->M_penjualan->simpan_penjualan($nofak, $total, $jml_uang, $kembalian, $category, $diskon, $packing);
+				$jum_point = $this->hitungPoin($total);
+				$order_proses = $this->M_penjualan->simpan_penjualan($nofak, $total, $jml_uang, $kembalian, $category, $diskon, $packing, $pelanggan, $jum_point);
+				
+				if($pelanggan) {
+					$point_proses = $this->M_pelanggan->update_point_from_transaksi($pelanggan, $jum_point);
+				}
+
 				$data['datatransaksi'] = $this->M_penjualan->cetak_faktur($nofak);
 				$data['userdata'] = $this->userdata;
 				if($order_proses){
@@ -166,5 +174,11 @@ class Datatransaksi extends AUTH_Controller {
 		$this->cart->destroy();
 		
 		$this->load->view('transaksi/'.$isCategory.'/list_barang');
+	}
+
+	function hitungPoin($totalBelanja, $nominalPerPoin = 10000) {
+		// Menggunakan floor agar hanya kelipatan penuh yang dihitung
+		$poin = floor($totalBelanja / $nominalPerPoin);
+		return (int)$poin;
 	}
 }

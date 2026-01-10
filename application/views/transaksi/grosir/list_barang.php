@@ -99,6 +99,15 @@
         <th style="text-align:right;">
         <input type="text" id="v_kembalian_grosir" name="v_kembalian_grosir" class="v_kembalian_grosir form-control input-sm" style="text-align:right;margin-bottom:5px;" readonly required></th>
     </tr>
+    <tr>
+        <td></td>
+        <th>Pilih Pelanggan</th>
+        <th style="text-align:right;">
+            <select class="form-control form-control-sm select2-search v_pelanggan_grosir" id="v_pelanggan_grosir" name="v_pelanggan_grosir" data-category="grosir" style="width:100%x;">
+                <option value='' disabled selected>-- Select --</option>
+            </select>
+        </th>
+    </tr>
 
     </table>
 </form>

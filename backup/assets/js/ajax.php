@@ -15,6 +15,7 @@
 		tampilCustomer();
 		tampilKategori();
 		tampilKaryawan();
+		tampilPelanggan();
 		<?php
 			if ($this->session->flashdata('msg') != '') {
 				echo "effect_msg();";
@@ -293,6 +294,121 @@
 	})
 
 	$('#update-kategori').on('hidden.bs.modal', function () {
+	  $('.form-msg').html('');
+	})
+
+//-----------------------------------------------------------------------------------------------//
+//-----------------------------------------------------------------------------------------------//
+//fungsi DATA Pelanggan
+	//FUNGSI TAMPIL
+	function tampilPelanggan() {
+		$.get('<?php echo base_url('Datapelanggan/tampil'); ?>', function(data) {
+			MyTable.fnDestroy();
+			$('#data-pelanggan').html(data);
+			refresh();
+		});
+	}
+
+	//DELETE Pelanggan
+	var id_pelanggan;
+	$(document).on("click", ".konfirmasiHapus-pelanggan", function() {
+		id_pelanggan = $(this).attr("data-id");
+	})
+	$(document).on("click", ".hapus-dataPelanggan", function() {
+		var id = id_pelanggan;
+		
+		$.ajax({
+			method: "POST",
+			url: "<?php echo base_url('Datapelanggan/delete'); ?>",
+			data: "id=" +id
+		})
+		.done(function(data) {
+			$('#konfirmasiHapus').modal('hide');
+			tampilPelanggan();
+			$('.msg').html(data);
+			effect_msg();
+		})
+	})
+
+	//UPDATE DATA Pelanggan
+	$(document).on("click", ".update-dataPelanggan", function() {
+		var id = $(this).attr("data-id");
+		
+		$.ajax({
+			method: "POST",
+			url: "<?php echo base_url('Datapelanggan/update'); ?>",
+			data: "id=" +id
+		})
+		.done(function(data) {
+			$('#tempat-modal').html(data);
+			$('#update-pelanggan').modal('show');
+		})
+	})
+
+	//INSERT DATA Pelanggan TO DB 
+	//form-tambah-Pelanggan dipanggil oleh controller Datapelanggan
+	$('#form-tambah-pelanggan').submit(function(e) {
+		var data = $(this).serialize();
+
+		$.ajax({
+			method: 'POST',
+			url: '<?php echo base_url('Datapelanggan/prosesTambah'); ?>',
+			data: data,
+			beforeSend: function(){
+                myLoad('start','#form-tambah-pelanggan');
+			}
+		})
+		.done(function(data) {
+			myLoad('end','#form-tambah-pelanggan');
+			var out = jQuery.parseJSON(data);
+
+			tampilPelanggan();
+			if (out.status == 'form') {
+				$('.form-msg').html(out.msg);
+				effect_msg_form();
+			} else {
+				document.getElementById("form-tambah-pelanggan").reset();
+				$('#tambah-pelanggan').modal('hide');
+				$('.msg').html(out.msg);
+				effect_msg();
+			}
+		})
+		
+		e.preventDefault();
+	});
+	
+	//FORM VALIDATION UPDATE
+	$(document).on('submit', '#form-update-pelanggan', function(e){
+		var data = $(this).serialize();
+
+		$.ajax({
+			method: 'POST',
+			url: '<?php echo base_url('Datapelanggan/prosesUpdate'); ?>',
+			data: data
+		})
+		.done(function(data) {
+			var out = jQuery.parseJSON(data);
+
+			tampilPelanggan();
+			if (out.status == 'form') {
+				$('.form-msg').html(out.msg);
+				effect_msg_form();
+			} else {
+				document.getElementById("form-update-pelanggan").reset();
+				$('#update-pelanggan').modal('hide');
+				$('.msg').html(out.msg);
+				effect_msg();
+			}
+		})
+		
+		e.preventDefault();
+	});
+
+	$('#tambah-pelanggan').on('hidden.bs.modal', function () {
+	  $('.form-msg').html('');
+	})
+
+	$('#update-pelanggan').on('hidden.bs.modal', function () {
 	  $('.form-msg').html('');
 	})
 

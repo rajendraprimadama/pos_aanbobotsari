@@ -16,14 +16,24 @@ class M_penjualan extends CI_Model{
 		return $hsl;
 	}
 
-	function simpan_penjualan($nofak, $total, $jml_uang, $kembalian, $category, $diskon, $packing){
+	function simpan_penjualan($nofak, $total, $jml_uang, $kembalian, $category, $diskon, $packing, $pelanggan, $point){
 		$idadmin = $this->userdata->nama;
 		
-		$this->db->query(
-			"INSERT INTO data_jual 
-			(jual_nofak, jual_total, jual_jml_uang, jual_kembalian, jual_user_id, jual_keterangan, jml_diskon, jml_hrga_packing) 
-			VALUES ('$nofak','$total','$jml_uang','$kembalian','$idadmin','$category', '$diskon', '$packing')
-			");
+		$query = "";
+		if($pelanggan){
+			$query = "INSERT INTO data_jual 
+				(jual_nofak, jual_total, jual_jml_uang, jual_kembalian, jual_user_id, jual_keterangan, jml_diskon, jml_hrga_packing, id_pelanggan, jum_point) 
+				VALUES ('$nofak','$total','$jml_uang','$kembalian','$idadmin','$category', '$diskon', '$packing', '$pelanggan', '$point')
+				";
+		}
+		else {
+			$query = "INSERT INTO data_jual 
+				(jual_nofak, jual_total, jual_jml_uang, jual_kembalian, jual_user_id, jual_keterangan, jml_diskon, jml_hrga_packing) 
+				VALUES ('$nofak','$total','$jml_uang','$kembalian','$idadmin','$category', '$diskon', '$packing')
+				";
+		}
+
+		$this->db->query($query);
 
 		$isModal = 0;
 		foreach ($this->cart->contents() as $item) {
@@ -115,5 +125,4 @@ class M_penjualan extends CI_Model{
 
 		return $hsl;
 	}
-	
 }

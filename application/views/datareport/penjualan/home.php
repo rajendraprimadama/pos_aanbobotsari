@@ -10,7 +10,7 @@
           <input type="text" class="form-control v_startdate" name="v_stardate" placeholder="dd mm yyyy" readonly>
         </div>
       </div>
-      <div class="col-md-2 text-center">
+      <div class="col-md-1 text-center">
             <button type="button" class="btn btn-sm bg-transparent border-warning btn-sm btn-success" disabled="">UNTIL</button>
       </div>
       <div class="col-md-3">
@@ -21,7 +21,18 @@
           <input type="text" class="form-control v_enddate" name="v_enddate" placeholder="dd mm yyyy" readonly>
         </div>
       </div>
-      <div class="col-md-4 text-right">
+
+      <div class="col-md-3">
+        <div class="input-group form-group">
+          <span class="input-group-addon" id="sizing-addon2">
+            <i class="glyphicon glyphicon-user"></i>
+          </span>
+          <select class="form-control form-control-sm select2-search v_pelanggan" id="v_pelanggan" name="v_pelanggan" style="width:100%x;">
+              <option value='' disabled selected>-- Select --</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-2 text-right">
         <button class="btn btn-primary btn-action" data-action="search" style="margin-right: 5px" ><i class="glyphicon glyphicon-plus-sign"></i> Search</button>
         <!-- <button class="btn btn-warning btn-action" data-action="export" target="_blank" style="margin-right: 5px"><i class="glyphicon glyphicon-export"></i> Export</button>
         <button class="btn btn-danger btn-action" data-action="print" ><i class="glyphicon glyphicon-print"></i> Print</button> -->
@@ -59,6 +70,8 @@
                       <th class="text-center">Tanggal</th>
                       <th class="text-center">Keterangan</th>
                       <th class="text-center">Total Belanja</th>
+                      <th class="text-center">Point Didapat</th>
+                      <th class="text-center">Pelanggan</th>
                   </tr>
               </thead>
               <tbody class="tbody-report">

@@ -5,7 +5,15 @@ class M_report extends CI_Model {
     function getDataPenjualan($param){
         $startDate = $param['startdate'];
         $endDate = $param['enddate'];
+        $pelanggan = $param['pelanggan'];
         
+        $where_pelanggan = "";
+        if (!empty($pelanggan)) {
+            // Menggunakan escape untuk keamanan dari SQL Injection
+            $where_pelanggan = " AND data_jual.id_pelanggan = " . $this->db->escape($pelanggan);
+        }
+
+        // 2. Masukkan variabel $where_pelanggan ke dalam query
         $query = $this->db->query("
                                     SELECT
                                         `data_jual`.`jual_nofak` AS NO_Transaksi,
@@ -15,17 +23,21 @@ class M_report extends CI_Model {
                                         `data_jual`.`jual_total` AS Total_HargaJual,
                                         `data_jual`.`jum_modal` AS Modal,
                                         `data_jual`.`jum_keuntungan` AS Keuntungan,
-                                        `data_jual`.`jual_keterangan` AS Keterangan
-                                        
+                                        `data_jual`.`jual_keterangan` AS Keterangan,
+                                        `data_jual`.`jum_point` AS jum_point,
+                                        `data_pelanggan`.`nama` AS pelanggan_nama
                                     FROM `data_jual`
                                     INNER JOIN `data_detail_jual`
                                     ON `data_jual`.`jual_nofak` = `data_detail_jual`.`d_jual_nofak`
+                                    LEFT JOIN data_pelanggan 
+                                    ON data_jual.id_pelanggan = data_pelanggan.id
                                     WHERE DATE(`data_jual`.jual_tanggal) BETWEEN '".date('Y-m-d',strtotime($startDate))."' AND '".date('Y-m-d',strtotime($endDate))."'
+                                    $where_pelanggan
                                     GROUP BY `data_detail_jual`.`d_jual_nofak`
                                     ORDER BY `data_jual`.jual_tanggal DESC
                                 ");
 
-		return $query->result();
+        return $query->result();
     }
     
     function getDetailTransaksi($param){

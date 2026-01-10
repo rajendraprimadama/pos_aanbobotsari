@@ -70,6 +70,35 @@ class PHPExcel_Cell_DefaultValueBinder implements PHPExcel_Cell_IValueBinder
      * @param   mixed  $pValue
      * @return  string
      */
+    // public static function dataTypeForValue($pValue = null)
+    // {
+    //     // Match the value against a few data types
+    //     if ($pValue === null) {
+    //         return PHPExcel_Cell_DataType::TYPE_NULL;
+    //     } elseif ($pValue === '') {
+    //         return PHPExcel_Cell_DataType::TYPE_STRING;
+    //     } elseif ($pValue instanceof PHPExcel_RichText) {
+    //         return PHPExcel_Cell_DataType::TYPE_INLINE;
+    //     } elseif ($pValue{0} === '=' && strlen($pValue) > 1) {
+    //         return PHPExcel_Cell_DataType::TYPE_FORMULA;
+    //     } elseif (is_bool($pValue)) {
+    //         return PHPExcel_Cell_DataType::TYPE_BOOL;
+    //     } elseif (is_float($pValue) || is_int($pValue)) {
+    //         return PHPExcel_Cell_DataType::TYPE_NUMERIC;
+    //     } elseif (preg_match('/^[\+\-]?([0-9]+\\.?[0-9]*|[0-9]*\\.?[0-9]+)([Ee][\-\+]?[0-2]?\d{1,3})?$/', $pValue)) {
+    //         $tValue = ltrim($pValue, '+-');
+    //         if (is_string($pValue) && $tValue{0} === '0' && strlen($tValue) > 1 && $tValue{1} !== '.') {
+    //             return PHPExcel_Cell_DataType::TYPE_STRING;
+    //         } elseif ((strpos($pValue, '.') === false) && ($pValue > PHP_INT_MAX)) {
+    //             return PHPExcel_Cell_DataType::TYPE_STRING;
+    //         }
+    //         return PHPExcel_Cell_DataType::TYPE_NUMERIC;
+    //     } elseif (is_string($pValue) && array_key_exists($pValue, PHPExcel_Cell_DataType::getErrorCodes())) {
+    //         return PHPExcel_Cell_DataType::TYPE_ERROR;
+    //     }
+
+    //     return PHPExcel_Cell_DataType::TYPE_STRING;
+    // }
     public static function dataTypeForValue($pValue = null)
     {
         // Match the value against a few data types
@@ -79,7 +108,9 @@ class PHPExcel_Cell_DefaultValueBinder implements PHPExcel_Cell_IValueBinder
             return PHPExcel_Cell_DataType::TYPE_STRING;
         } elseif ($pValue instanceof PHPExcel_RichText) {
             return PHPExcel_Cell_DataType::TYPE_INLINE;
-        } elseif ($pValue{0} === '=' && strlen($pValue) > 1) {
+        } 
+        // PERBAIKAN DISINI: Tambahkan is_string dan ganti {} menjadi []
+        elseif (is_string($pValue) && isset($pValue[0]) && $pValue[0] === '=' && strlen($pValue) > 1) {
             return PHPExcel_Cell_DataType::TYPE_FORMULA;
         } elseif (is_bool($pValue)) {
             return PHPExcel_Cell_DataType::TYPE_BOOL;
@@ -87,7 +118,8 @@ class PHPExcel_Cell_DefaultValueBinder implements PHPExcel_Cell_IValueBinder
             return PHPExcel_Cell_DataType::TYPE_NUMERIC;
         } elseif (preg_match('/^[\+\-]?([0-9]+\\.?[0-9]*|[0-9]*\\.?[0-9]+)([Ee][\-\+]?[0-2]?\d{1,3})?$/', $pValue)) {
             $tValue = ltrim($pValue, '+-');
-            if (is_string($pValue) && $tValue{0} === '0' && strlen($tValue) > 1 && $tValue{1} !== '.') {
+            // PERBAIKAN DISINI: Tambahkan is_string dan ganti {} menjadi []
+            if (is_string($pValue) && isset($tValue[0]) && $tValue[0] === '0' && strlen($tValue) > 1 && (isset($tValue[1]) && $tValue[1] !== '.')) {
                 return PHPExcel_Cell_DataType::TYPE_STRING;
             } elseif ((strpos($pValue, '.') === false) && ($pValue > PHP_INT_MAX)) {
                 return PHPExcel_Cell_DataType::TYPE_STRING;

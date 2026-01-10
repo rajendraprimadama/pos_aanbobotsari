@@ -38,9 +38,15 @@ class Datareport extends AUTH_Controller {
 	}
 
 	public function exportExcelPenjualan(){
-		$param 	= [
-			'startdate' => $this->uri->segment(3),
-			'enddate' => $this->uri->segment(4)
+		$startdate = $this->uri->segment(3);
+		$enddate   = $this->uri->segment(4);
+		$pelanggan = $this->uri->segment(5);
+
+		// Susun array untuk dikirim ke model
+		$param = [
+			'startdate' => $startdate,
+			'enddate'   => $enddate,
+			'pelanggan' => ($pelanggan != "") ? $pelanggan : null // Jika kosong, set null
 		];
 		$result = $this->M_report->getDataPenjualan($param);
 
@@ -118,30 +124,35 @@ class Datareport extends AUTH_Controller {
 		$isTotal = 0;
 		foreach($result as $ket => $val){ // Lakukan looping pada variabel siswa
 			$excel->setActiveSheetIndex(0)->setCellValue('A'.$numrow, $no);
-			$excel->setActiveSheetIndex(0)->setCellValueExplicit('B'.$numrow, $val->NO_Transaksi, PHPExcel_Cell_DataType::TYPE_STRING);
-			$excel->setActiveSheetIndex(0)->setCellValue('C'.$numrow, date('d M Y',strtotime($val->DATE)));
-			$excel->setActiveSheetIndex(0)->setCellValue('D'.$numrow, strtoupper($val->Keterangan));
+    
+    		// Gunakan setCellValueExplicit agar No Transaksi tidak berubah jadi format scientific/angka
+			$excel->setActiveSheetIndex(0)->setCellValueExplicit('B'.$numrow, (string)$val->NO_Transaksi, PHPExcel_Cell_DataType::TYPE_STRING);
+			
+			// Pastikan data tanggal valid
+			$tgl = ($val->DATE) ? date('d M Y', strtotime($val->DATE)) : '-';
+			$excel->setActiveSheetIndex(0)->setCellValue('C'.$numrow, $tgl);
+			
+			// Gunakan casting (string) untuk keterangan agar terhindar dari error offset
+			$excel->setActiveSheetIndex(0)->setCellValue('D'.$numrow, strtoupper((string)$val->Keterangan));
+			
+			// Untuk angka, masukkan angka mentahnya dulu agar bisa di-sum di excel jika perlu, 
+			// atau jika ingin format ribuan gunakan string
 			$excel->setActiveSheetIndex(0)->setCellValue('E'.$numrow, self::FormatNumber($val->Total_HargaJual));
 
-			// Apply style row yang telah kita buat tadi ke masing-masing baris (isi tabel)
-			$excel->getActiveSheet()->getStyle('A'.$numrow)->applyFromArray($style_row);
-			$excel->getActiveSheet()->getStyle('B'.$numrow)->applyFromArray($style_row);
-			$excel->getActiveSheet()->getStyle('C'.$numrow)->applyFromArray($style_row);
-			$excel->getActiveSheet()->getStyle('D'.$numrow)->applyFromArray($style_row);
-			$excel->getActiveSheet()->getStyle('E'.$numrow)->applyFromArray($style_row);
+			// Apply style
+			$excel->getActiveSheet()->getStyle('A'.$numrow.':E'.$numrow)->applyFromArray($style_row);
 
-			$no++; // Tambah 1 setiap kali looping
-			$numrow++; // Tambah 1 setiap kali looping
-			$isTotal += $val->Total_HargaJual;
+			$no++;
+			$numrow++;
+			$isTotal += (float)$val->Total_HargaJual;
 		}
 
-		// total 
+		// Bagian Total
 		$row_total = $numrow;
-		$excel->setActiveSheetIndex(0)->setCellValue('A'.$row_total, "TOTAL"); // Set kolom A1 dengan tulisan "DATA SISWA"
-		$excel->getActiveSheet()->mergeCells('A'.$row_total.':D'.$row_total); // Set Merge Cell pada kolom A1 sampai E1
-		$excel->getActiveSheet()->getStyle('A'.$row_total)->getFont()->setBold(TRUE); // Set bold kolom A1
-		$excel->getActiveSheet()->getStyle('A'.$row_total)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER); // Set text center untuk kolom A1
-		$excel->getActiveSheet()->setCellValue('E'.$row_total, self::FormatNumber($isTotal));
+		$excel->setActiveSheetIndex(0)->setCellValue('A'.$row_total, "TOTAL");
+		$excel->getActiveSheet()->mergeCells('A'.$row_total.':D'.$row_total);
+		// Tambahkan casting (string) di sini juga
+		$excel->getActiveSheet()->setCellValue('E'.$row_total, (string)self::FormatNumber($isTotal));
 		$excel->getActiveSheet()->getStyle('A'.$row_total.':E'.$row_total)->applyFromArray($style_row);
 
 		// Set width kolom

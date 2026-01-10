@@ -6,60 +6,42 @@
 
     const _page = {
         init: () => {
+            $('.SearchBarang').each(function() {
+                if (!$(this).hasClass("select2-hidden-accessible")) {
+                    $(this).select2({
+                        ajax: {
+                            url: `<?php echo base_url(); ?>Autocomplete`,
+                            dataType: 'json',
+                            data: params => ({ Search: params.term }),
+                            processResults: data => ({
+                                results: $.map(data, item => ({ text: item.nama_brg, id: item.id_brg }))
+                            }),
+                            cache: true,
+                        },
+                        minimumInputLength: 3,
+                        placeholder: "Cari nama barang"
+                    });
+                }
+            });
 
-            if(cekElement('#v_nama_barang_retail')){
-                $('#v_nama_barang_retail').select2({
-                    ajax: {
-                        url: `<?php echo base_url(); ?>Autocomplete`,
-                        dataType: 'json',
-                        data: function (params) {
-                            return {
-                                Search: params.term
-                            };
+            // Inisialisasi Pelanggan (Retail & Grosir)
+            $('.v_pelanggan_retail, .v_pelanggan_grosir').each(function() {
+                if (!$(this).hasClass("select2-hidden-accessible")) {
+                    $(this).select2({
+                        ajax: {
+                            url: `<?php echo base_url(); ?>Autocomplete/pelanggan`,
+                            dataType: 'json',
+                            data: params => ({ Search: params.term }),
+                            processResults: data => ({
+                                results: $.map(data, item => ({ text: item.nama, id: item.id }))
+                            }),
+                            cache: true,
                         },
-                        processResults: function (data, params) {
-                            return {
-                                results: $.map(data, function (item) {
-                                    return {
-                                        text : `${item.nama_brg}`,
-                                        id: item.id_brg,
-                                    }
-                                })
-                            }
-                        },
-                        cache: true,
-                    },
-                    minimumInputLength: 3,
-                    placeholder: "Cari nama barang"
-                });
-            }
-
-            if(cekElement('#v_nama_barang_grosir')){
-                $('#v_nama_barang_grosir').select2({
-                    ajax: {
-                        url: `<?php echo base_url(); ?>Autocomplete`,
-                        dataType: 'json',
-                        data: function (params) {
-                            return {
-                                Search: params.term
-                            };
-                        },
-                        processResults: function (data, params) {
-                            return {
-                                results: $.map(data, function (item) {
-                                    return {
-                                        text : `${item.nama_brg}`,
-                                        id: item.id_brg,
-                                    }
-                                })
-                            }
-                        },
-                        cache: true,
-                    },
-                    minimumInputLength: 3,
-                    placeholder: "Cari nama barang"
-                });
-            }
+                        minimumInputLength: 3,
+                        placeholder: "Cari pelanggan"
+                    });
+                }
+            });
         },
 
         submit: () => {
@@ -132,6 +114,7 @@
                     .done(function(data) {
                         $(`.content-list-barang-${category}`).empty().html(data);
                         masking();
+                        _page.init();
                         _page.submit();
                     })
                     break;
@@ -174,6 +157,8 @@
                             $(`#v_nama_barang_${category}`).empty().html(content);
                             $(`#detail_barang_${category}`).empty().html(respon.content);
                             $(`#v_satuan_${category}`).focus();
+                            _page.init();
+                            
                         }
                         else {
                             $(`#v_kode_barang_${category}`).val('').focus();
@@ -200,6 +185,7 @@
 
                     $(`#detail_barang_${category}`).empty().html(respon.content);
                     $(`#v_kode_barang_${category}`).val(respon.barcode);
+                    _page.init();
                 }
             });
         },
@@ -239,6 +225,7 @@
                         $(`#detail_barang_${category}`).empty();
                         _logic.disabledTab(category);
                         masking();
+                        _page.init();
                         _page.submit();
                     }
                 });
@@ -285,6 +272,7 @@
                         $(`#v_nama_barang_${category} option`).remove();
                         $(`#detail_barang_${category}`).empty();
                         masking();
+                        _page.init();
                         _page.submit();
                     }
                 });
@@ -305,6 +293,7 @@
                     $(`#detail_barang_${category}`).empty();
                     $('.tabKasir').removeClass('disabled').find('a').attr("data-toggle","tab");
                     masking();
+                    _page.init();
                     _page.submit();
                 }
             });
