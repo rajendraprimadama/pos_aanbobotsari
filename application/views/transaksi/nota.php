@@ -85,6 +85,9 @@ $b=$datatransaksi->row_array();
                     <td class="text-left"><?php echo $b['jual_nofak'];?></td>
                     <td colspan="3" style="text-align: right"><b>Kasir:</b> <?php echo ucfirst($userdata->nama); ?></td>
                 </tr>
+                <tr>
+                    <td colspan="4" style="text-align: right"><?php echo ucfirst($b['nama']); ?></td>
+                </tr>
                 <tr style="border-top: 1px solid black">
                     <th class="description"></th>
                     <th class="quantity"></th>

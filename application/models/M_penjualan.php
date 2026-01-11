@@ -116,10 +116,13 @@ class M_penjualan extends CI_Model{
 				d_jual_barang_harjul,
 				d_jual_qty,
 				d_jual_diskon,
-				d_jual_total 
+				d_jual_total,
+				data_pelanggan.nama
 			FROM data_jual 
 			JOIN data_detail_jual 
 			ON jual_nofak=d_jual_nofak 
+			LEFT JOIN data_pelanggan 
+            ON data_jual.id_pelanggan = data_pelanggan.id
 			WHERE jual_nofak='$nofak'
 		");
 
