@@ -6,6 +6,9 @@
 
         _page.component()
 
+        if($('.btn-action[data-action="search"]').length > 0){
+            $('.btn-action[data-action="search"]').trigger('click');
+        }
     });
 
     const _page= {
@@ -21,7 +24,8 @@
                     else{
                         let data = {
                             startdate: $('input[name=v_stardate]').val(),
-                            enddate: $('input[name=v_enddate]').val()
+                            enddate: $('input[name=v_enddate]').val(),
+                            pelanggan: $('select[name=v_pelanggan]').val()
                         }
                         $.ajax({
                             method: "POST",
@@ -61,28 +65,26 @@
 
                 case 'export':
                     
-                    var data = {
-                        startdate: $('input[name=v_stardate]').val(),
-                        enddate: $('input[name=v_enddate]').val()
+                    var start     = $('input[name=v_stardate]').val();
+                    var end       = $('input[name=v_enddate]').val();
+                    var pelanggan = $('select[name=v_pelanggan]').val();
+
+                    // Validasi dasar agar URL tidak rusak
+                    if (!start || !end) {
+                        myAlert('warning', 'Silahkan pilih rentang tanggal terlebih dahulu');
+                        break;
                     }
 
-                    $.ajax({
-                        method: "POST",
-                        url: "<?php echo base_url('Datareport/exportExcelKeuntungan'); ?>",
-                        data: data,
-                        beforeSend: function(){
-                            myLoad('start','.box-body');
-                        }
-                    })
-                    .done(function(data) {
-                        myLoad('end','.box-body');
-                        var data = {
-                            startdate: $('input[name=v_stardate]').val(),
-                            enddate: $('input[name=v_enddate]').val()
-                        }
+                    // 2. Susun URL (Tanggal selalu ada)
+                    var url = "<?php echo base_url(); ?>Datareport/exportExcelKeuntungan/" + start + "/" + end;
 
-                        window.open("<?php echo base_url(); ?>Datareport/exportExcelKeuntungan/"+data.startdate+"/"+data.enddate, '_blank');
-                    })
+                    // 3. Tambahkan segment pelanggan HANYA jika ada isinya
+                    if (pelanggan && pelanggan !== "") {
+                        url += "/" + pelanggan;
+                    }
+
+                    // Eksekusi buka tab baru untuk download
+                    window.open(url, '_blank');
                     break;
 
                 default:
@@ -110,7 +112,7 @@
 
                     $('.v_enddate').val(null);
                 }
-            });
+            }).datepicker("setDate", new Date());
 
             $('.v_enddate').datepicker({
                 dateFormat: 'dd-mm-yy',
@@ -120,7 +122,34 @@
                 onClose: function () {
                     $('.v_startdate').datepicker('option', 'maxDate');
                 }
-            });
+            }).datepicker("setDate", new Date());
+
+            if(cekElement('#v_pelanggan')){
+                $('#v_pelanggan').select2({
+                    ajax: {
+                        url: `<?php echo base_url(); ?>Autocomplete/pelanggan`,
+                        dataType: 'json',
+                        data: function (params) {
+                            return {
+                                Search: params.term
+                            };
+                        },
+                        processResults: function (data, params) {
+                            return {
+                                results: $.map(data, function (item) {
+                                    return {
+                                        text : `${item.nama}`,
+                                        id: item.id,
+                                    }
+                                })
+                            }
+                        },
+                        cache: true,
+                    },
+                    minimumInputLength: 3,
+                    placeholder: "Cari pelanggan"
+                });
+            }
         }
     }
 </script>

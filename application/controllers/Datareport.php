@@ -212,9 +212,15 @@ class Datareport extends AUTH_Controller {
 		echo json_encode($respon);	}
 
 	public function exportExcelKeuntungan(){
-		$param 	= [
-			'startdate' => $this->uri->segment(3),
-			'enddate' => $this->uri->segment(4)
+		$startdate = $this->uri->segment(3);
+		$enddate   = $this->uri->segment(4);
+		$pelanggan = $this->uri->segment(5);
+
+		// Susun array untuk dikirim ke model
+		$param = [
+			'startdate' => $startdate,
+			'enddate'   => $enddate,
+			'pelanggan' => ($pelanggan != "") ? $pelanggan : null // Jika kosong, set null
 		];
 		$result = $this->M_report->getDataPenjualan($param);
 
