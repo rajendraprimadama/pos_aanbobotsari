@@ -26,5 +26,5 @@
 </div>
 
 <!-- untuk appent detail transaksi -->
-<div class="col-md-6" id="detail_barang_grosir">
+<div class="col-md-6" id="detail_barang_grosir" style="margin-top: 45px">
 </div>
