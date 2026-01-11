@@ -1,6 +1,14 @@
 <div class="col-md-6" style="padding-left: 0px">
     <table class="table">
         <tr>
+            <th>Pilih Pelanggan</th>
+            <th style="text-align:right;">
+                <select class="form-control form-control-sm select2-search v_pelanggan_grosir" id="v_pelanggan_grosir" name="v_pelanggan_grosir" data-category="grosir" style="width:100%x;">
+                    <option value='' disabled selected>-- Select --</option>
+                </select>
+            </th>
+        </tr>
+        <tr>
             <th style="border-top: none !important; background-color:#FFFF00; font-size:15px; width: 25%">Kode Barcode</th>
             <th style="border-top: none !important; background-color:#FFFF00; font-size:15px">Nama Barang</th>
         </tr>

@@ -47,6 +47,10 @@
         submit: () => {
             $('#formAction_retail').submit(function(e) {
                 var data = $(this).serialize();
+                var pelanggan = $('#v_pelanggan_retail').val();
+                if (pelanggan) {
+                    data += '&v_pelanggan_retail=' + pelanggan;
+                }
 
                 $.ajax({
                     method: 'POST',
@@ -72,6 +76,10 @@
 
             $('#formAction_grosir').submit(function(e) {
                 var data = $(this).serialize();
+                var pelanggan = $('#v_pelanggan_grosir').val();
+                if (pelanggan) {
+                    data += '&v_pelanggan_grosir=' + pelanggan;
+                }
 
                 $.ajax({
                     method: 'POST',

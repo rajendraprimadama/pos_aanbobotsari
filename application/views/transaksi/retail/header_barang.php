@@ -1,6 +1,14 @@
 <div class="col-md-6" style="padding-left: 0px">
     <table class="table">
         <tr>
+            <th>Pilih Pelanggan</th>
+            <th style="text-align:right;">
+                <select class="form-control form-control-sm select2-search v_pelanggan_retail" id="v_pelanggan_retail" name="v_pelanggan_retail" data-category="retail" style="width:100%x;">
+                    <option value='' disabled selected>-- Select --</option>
+                </select>
+            </th>
+        </tr>
+        <tr>
             <th style="border-top: none !important; background-color:#98FB98; font-size:15px; width: 25%">Kode Barcode</th>
             <th style="border-top: none !important; background-color:#98FB98; font-size:15px">Nama Barang</th>
         </tr>
@@ -18,5 +26,5 @@
 </div>
 
 <!-- untuk appent detail transaksi -->
-<div id="detail_barang_retail" class="col-md-6">
+<div id="detail_barang_retail" class="col-md-6" style="margin-top: 45px">
 </div>

@@ -62,52 +62,42 @@
 <form method="post" id="formAction_grosir">
     <input type="hidden" name="category" value="grosir">
     <table>
-    <tr>
-        <td style="width:760px;" rowspan="6">
-            <button style="width:30%" type="submit" class="btn btn-info btn-lg"> Bayar</button>
-            <button style="width:30%" type="button" class="btn btn-danger btn-lg btn-act" data-action="reset" data-category="grosir"> Reset</button>
-        </td>
-        <th style="width:140px;">Total Belanja(Rp)</th>
-        <th style="text-align:right;width:140px;">
-        <input type="text" name="v_total_bayar_grosir" id="v_total_bayar_grosir" value="<?php echo number_format($isTotal);?>" class="form-control input-sm v_total_bayar_grosir" style="text-align:right;margin-bottom:5px;" readonly></th>
-    </tr>
-    <tr>
-        <th>(+) Packing(Rp)</th>
-        <th style="text-align:right;">
-        <input type="text" id="v_jml_packing_grosir" name="v_jml_packing_grosir" class="v_jml_packing_grosir form-control input-sm FormatKey calculate" data-category="grosir" style="text-align:right;margin-bottom:5px;"></th>
-    </tr>
-    <tr>
-        <th>(-) Diskon(Rp)</th>
-        <th style="text-align:right;">
-        <input type="text" id="v_jml_diskon_grosir" name="v_jml_diskon_grosir" class="v_jml_diskon_grosir form-control input-sm FormatKey calculate" data-category="grosir" style="text-align:right;margin-bottom:5px;"></th>
-    </tr>
+        <tr>
+            <td style="width:760px;" rowspan="6">
+                <button style="width:30%" type="submit" class="btn btn-info btn-lg"> Bayar</button>
+                <button style="width:30%" type="button" class="btn btn-danger btn-lg btn-act" data-action="reset" data-category="grosir"> Reset</button>
+            </td>
+            <th style="width:140px;">Subtotal Belanja(Rp)</th>
+            <th style="text-align:right;width:140px;">
+            <input type="text" name="v_total_bayar_grosir" id="v_total_bayar_grosir" value="<?php echo number_format($isTotal);?>" class="form-control input-sm v_total_bayar_grosir" style="text-align:right;margin-bottom:5px;" readonly></th>
+        </tr>
+        <tr>
+            <th>(+) Packing(Rp)</th>
+            <th style="text-align:right;">
+            <input type="text" id="v_jml_packing_grosir" name="v_jml_packing_grosir" class="v_jml_packing_grosir form-control input-sm FormatKey calculate" data-category="grosir" style="text-align:right;margin-bottom:5px;"></th>
+        </tr>
+        <tr>
+            <th>(-) Diskon(Rp)</th>
+            <th style="text-align:right;">
+            <input type="text" id="v_jml_diskon_grosir" name="v_jml_diskon_grosir" class="v_jml_diskon_grosir form-control input-sm FormatKey calculate" data-category="grosir" style="text-align:right;margin-bottom:5px;"></th>
+        </tr>
 
-    <tr><td colspan="100%">======================================</td></tr>
-    <tr>
-        <th>Total Belanja(Rp)</th>
-        <th style="text-align:right;">
-        <input type="text" id="v_jml_total_grosir" name="v_jml_total_grosir" value="<?php echo number_format($isTotal);?>" class="v_jml_total_grosir form-control input-sm" data-category="grosir" style="text-align:right;margin-bottom:5px;" readonly required></th>
-    </tr>
-    <tr>
-        <th>Tunai(Rp)</th>
-        <th style="text-align:right;">
-        <input type="text" id="v_jml_bayar_grosir" name="v_jml_bayar_grosir" class="v_jml_bayar_grosir form-control input-sm FormatKey calculate" data-category="grosir" style="text-align:right;margin-bottom:5px;" required></th>
-    </tr>
-    <tr>
-        <td></td>
-        <th>Kembalian(Rp)</th>
-        <th style="text-align:right;">
-        <input type="text" id="v_kembalian_grosir" name="v_kembalian_grosir" class="v_kembalian_grosir form-control input-sm" style="text-align:right;margin-bottom:5px;" readonly required></th>
-    </tr>
-    <tr>
-        <td></td>
-        <th>Pilih Pelanggan</th>
-        <th style="text-align:right;">
-            <select class="form-control form-control-sm select2-search v_pelanggan_grosir" id="v_pelanggan_grosir" name="v_pelanggan_grosir" data-category="grosir" style="width:100%x;">
-                <option value='' disabled selected>-- Select --</option>
-            </select>
-        </th>
-    </tr>
-
+        <tr><td colspan="100%">======================================</td></tr>
+        <tr>
+            <th>Total Belanja(Rp)</th>
+            <th style="text-align:right;">
+            <input type="text" id="v_jml_total_grosir" name="v_jml_total_grosir" value="<?php echo number_format($isTotal);?>" class="v_jml_total_grosir form-control input-sm" data-category="grosir" style="text-align:right;margin-bottom:5px;" readonly required></th>
+        </tr>
+        <tr>
+            <th>Tunai(Rp)</th>
+            <th style="text-align:right;">
+            <input type="text" id="v_jml_bayar_grosir" name="v_jml_bayar_grosir" class="v_jml_bayar_grosir form-control input-sm FormatKey calculate" data-category="grosir" style="text-align:right;margin-bottom:5px;" required></th>
+        </tr>
+        <tr>
+            <td></td>
+            <th>Kembalian(Rp)</th>
+            <th style="text-align:right;">
+            <input type="text" id="v_kembalian_grosir" name="v_kembalian_grosir" class="v_kembalian_grosir form-control input-sm" style="text-align:right;margin-bottom:5px;" readonly required></th>
+        </tr>
     </table>
 </form>
