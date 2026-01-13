@@ -288,6 +288,10 @@
         
         reset_cart: (element) => {
             let category = $(element).attr('data-category');
+            $('.v_pelanggan_retail, .v_pelanggan_grosir')
+                .val(null)
+                .trigger('change');
+                
             $.ajax({
                 type: "POST",
                 url : "<?php echo base_url().'Datatransaksi/reset_cart';?>",
